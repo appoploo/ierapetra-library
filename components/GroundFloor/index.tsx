@@ -480,18 +480,33 @@ export function GroundFloor() {
         >
           <tspan
             id="tspan7870"
-            x="-493.833"
-            y="192.738"
+            x="-720.833"
+            y="210.738"
             fill="#333"
             strokeWidth="1"
             fontFamily="Arial"
-            fontSize="22.578"
+            fontSize="18.578"
             fontStretch="normal"
             fontStyle="normal"
             fontVariant="normal"
             fontWeight="normal"
           >
-            ΙΣΟΓΕΙΟ
+            ΙΣΟΓΕΙΟ {router.query.bookshelf}
+          </tspan>
+          <tspan
+            id="tspan7870"
+            x="-720.833"
+            y="230.738"
+            fill="#333"
+            strokeWidth="1"
+            fontFamily="Arial"
+            fontSize="18.578"
+            fontStretch="normal"
+            fontStyle="normal"
+            fontVariant="normal"
+            fontWeight="normal"
+          >
+            {router.query.title}
           </tspan>
         </text>
       </g>

@@ -158,10 +158,12 @@ export default function Home() {
   const router = useRouter();
   const floor = router.query.floor;
   const bookshelf = router.query.bookshelf;
+  const title = router.query.title;
   const [text, setText] = useState<string>("");
   const ref = useRef<HTMLInputElement>(null);
+  console.log(ref.current?.checked);
   return (
-    <div className="h-screen  grid place-items-center relative overflow-hidden">
+    <div className="h-screen  grid place-items-center relative  overflow-hidden">
       <label
         onClick={() => {
           if (!ref.current) return;
@@ -177,9 +179,9 @@ export default function Home() {
         ref={ref}
         checked={ref?.current?.checked}
         id="my-modal-4"
-        className="modal-toggle"
+        className="modal-toggle z-50"
       />
-      <div className="modal cursor-pointer" id="id01">
+      <div className="modal cursor-pointer">
         <div className="modal-box">
           <input
             placeholder="🔎 Search..."
@@ -197,7 +199,7 @@ export default function Home() {
                     ref.current.checked = false;
                   }}
                   key={idx}
-                  href={`?bookshelf=${b.bookshelf}&floor=${b.floor}`}
+                  href={`?title=${b.title}&floor=${b.floor}&bookshelf=${b.bookshelf}`}
                   className="stats h-20   border rounded-none"
                 >
                   <label role="button" htmlFor="my-modal-4">
@@ -214,13 +216,8 @@ export default function Home() {
         </div>
       </div>
 
-      {floor === "ground" ? <GroundFloor /> : <FirstFloor />}
-      <div className="grid z-50 place-items-center p-4 w-full h-full">
-        {floor && bookshelf ? (
-          <h1 className="text-xl font-bold text-center">
-            floor:{floor} <br /> bookshelf:{bookshelf}
-          </h1>
-        ) : null}
+      <div className="w-full absolute -z-50  left-0 h-fit">
+        {floor === "ground" ? <GroundFloor /> : <FirstFloor />}
       </div>
     </div>
   );

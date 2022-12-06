@@ -1088,18 +1088,33 @@ export function FirstFloor() {
         >
           <tspan
             id="tspan7870-0"
-            x="-520.396"
+            x="-720.396"
             y="703.17"
             fill={"black"}
             strokeWidth="1"
             fontFamily="Arial"
-            fontSize="22.578"
+            fontSize="18.578"
             fontStretch="normal"
             fontStyle="normal"
             fontVariant="normal"
             fontWeight="normal"
           >
-            1ος ΟΡΟΦΟΣ
+            1ος ΟΡΟΦΟΣ {router.query.bookshelf}
+          </tspan>
+          <tspan
+            id="tspan7870-0"
+            x="-720.396"
+            y="723.17"
+            fill={"black"}
+            strokeWidth="1"
+            fontFamily="Arial"
+            fontSize="18.578"
+            fontStretch="normal"
+            fontStyle="normal"
+            fontVariant="normal"
+            fontWeight="normal"
+          >
+            {router.query.title}
           </tspan>
         </text>
       </g>
