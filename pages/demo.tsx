@@ -158,109 +158,109 @@ export default function videoList() {
         </ul>
         <div className="h-screen p-8">
           <div className=" md:hidden flex text-xs w-screen overflow-auto ">
-            <a
+            <Link
               href="/demo?type=adventure-stories"
               className={clsx("inline-block py-2 px-2 rounded-lg  ", {
                 "bg-primary mary": page === "adventure-stories",
               })}
             >
               Adventure stories
-            </a>
-            <a
+            </Link>
+            <Link
               href="/demo?type=classics"
               className={clsx(" inline-block py-2 px-2 rounded-lg ", {
                 "bg-primary  ": page === "classics",
               })}
             >
               Classics
-            </a>
+            </Link>
 
-            <a
+            <Link
               href="/demo?type=crime"
               className={clsx("inline-block py-2  px-2 rounded-lg ", {
                 "bg-primary   ": page === "crime",
               })}
             >
               Crime
-            </a>
+            </Link>
 
-            <a
+            <Link
               href="/demo?type=fairy-tales"
               className={clsx("inline-block py-2  px-2 rounded-lg ", {
                 "bg-primary   ": page === "fairy-tales",
               })}
             >
               Fairy tales
-            </a>
+            </Link>
 
-            <a
+            <Link
               href="/demo?type=fantasy"
               className={clsx("inline-block py-2  px-2 rounded-lg ", {
                 "bg-primary   ": page === "fantasy",
               })}
             >
               Fantasy
-            </a>
+            </Link>
 
-            <a
+            <Link
               href="/demo?type=historical-fiction"
               className={clsx("inline-block py-2  px-2 rounded-lg ", {
                 "bg-primary   ": page === "historical-fiction",
               })}
             >
               Historical fiction
-            </a>
-            <a
+            </Link>
+            <Link
               href="/demo?type=horror"
               className={clsx("inline-block py-2  px-2 rounded-lg ", {
                 "bg-primary   ": page === "horror",
               })}
             >
               Horror
-            </a>
+            </Link>
 
-            <a
+            <Link
               href="demo?type=humourandsatire"
               className={clsx("inline-block py-2  px-2 rounded-lg ", {
                 "bg-primary  ": page === "humourandsatire",
               })}
             >
               Humour and satire
-            </a>
-            <a
+            </Link>
+            <Link
               href="/demo?type=mystery"
               className={clsx("inline-block py-2  px-2 rounded-lg ", {
                 "bg-primary  ": page === "mystery",
               })}
             >
               Mystery
-            </a>
+            </Link>
 
-            <a
+            <Link
               href="/demo?type=romance"
               className={clsx("inline-block py-2  px-2 rounded-lg ", {
                 "bg-primary  ": page === "romance",
               })}
             >
               Romance
-            </a>
+            </Link>
 
-            <a
+            <Link
               href="/demo?type=science-fiction"
               className={clsx("inline-block py-2  px-2 rounded-lg ", {
                 "bg-primary  ": page === "science-fiction",
               })}
             >
               Science fiction
-            </a>
-            <a
+            </Link>
+            <Link
               href="/demo?type=thrillers"
               className={clsx("inline-block py-2  px-2 rounded-lg ", {
                 "bg-primary  ": page === "trillers",
               })}
             >
               Thrillers
-            </a>
+            </Link>
           </div>
 
           <div className="grid grid-col-1 md:grid-cols-4 gap-4 max-h-screen overflow-auto h-fit  p-8 pb-20">
@@ -304,8 +304,8 @@ export default function videoList() {
             Congratulations random Internet user!
           </h3>
           <p className="py-4">
-            You've been selected for a chance to get one year of subscription to
-            use Wikipedia for free!
+            You have been selected for a chance to get one year of subscription
+            to use Wikipedia for free!
           </p>
           <div className="modal-action">
             <label htmlFor="my-modal" className="btn">
