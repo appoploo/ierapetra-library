@@ -37,7 +37,7 @@ const videos = [
     img: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bW9kZXJuJTIwaG91c2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
   },
 ];
-export default function videoList() {
+export default function demo() {
   const router = useRouter();
   const page = router.query.type;
   const ref = useRef<HTMLInputElement>(null);
