@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import clsx from "clsx";
 import { useRouter } from "next/router";
 
@@ -41,6 +41,7 @@ export default function videoList() {
   const router = useRouter();
   const page = router.query.type;
   const ref = useRef<HTMLInputElement>(null);
+  const [text, setText] = useState<string>("");
   console.log(page);
 
   return (
@@ -50,8 +51,9 @@ export default function videoList() {
           type="text"
           placeholder="Search"
           className="input input-bordered  md:w-1/3 rounded-full "
+          onChange={(evt) => setText(evt.currentTarget.value)}
         />
-        <button className="btn">🔍</button>
+        <button className="btn m-2">🔍</button>
       </div>
 
       <div className=" grid  sm:grid-col-1 md:grid-cols-[300px_2fr]">
@@ -262,26 +264,29 @@ export default function videoList() {
           </div>
 
           <div className="grid grid-col-1 md:grid-cols-4 gap-4 max-h-screen overflow-auto h-fit  p-8 pb-20">
-            {videos.map((obj, idx) => (
-              <div
-                onClick={() => {
-                  if (!ref.current) return;
-                  ref.current.checked = true;
-                }}
-                className="card card-compact w-full bg-base-100 shadow-xl"
-              >
-                <figure>
-                  <img key={idx} src={obj.img} alt="Shoes" />
-                </figure>
-                <div className="card-body">
-                  <h2 className="card-title">{obj.name}</h2>
-                  <p>If a dog chews shoes whose shoes does he choose?</p>
-                  <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Buy Now</button>
+            {videos
+              .filter((v) => v.name.includes(text))
+              .map((obj, idx) => (
+                <div
+                  key={idx}
+                  onClick={() => {
+                    if (!ref.current) return;
+                    ref.current.checked = true;
+                  }}
+                  className="card card-compact w-full bg-base-100 shadow-xl"
+                >
+                  <figure>
+                    <img src={obj.img} alt="Shoes" />
+                  </figure>
+                  <div className="card-body">
+                    <h2 className="card-title">{obj.name}</h2>
+                    <p>If a dog chews shoes whose shoes does he choose?</p>
+                    <div className="card-actions justify-end">
+                      <button className="btn btn-primary">Buy Now</button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
         </div>
       </div>
