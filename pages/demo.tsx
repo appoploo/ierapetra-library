@@ -4,6 +4,7 @@ import clsx from "clsx";
 import { useRouter } from "next/router";
 import { GroundFloor } from "../components/GroundFloor";
 import { FirstFloor } from "../components/FirstFoor";
+import Image from "next/image";
 
 const books: {
   title: string;
@@ -248,12 +249,7 @@ export default function Demo() {
       </div>
 
       <div className=" grid   sm:grid-col-1 md:grid-cols-[300px_2fr]">
-        <ul
-          // style={{
-          //   height: "calc(100vh - 66px)",
-          // }}
-          className="menu h-screen border-r  mt-0.5  hidden md:block bg-base-100 w-72 justify-items-center  overflow-y-auto "
-        >
+        <ul className="menu h-screen border-r fixed-height mt-0.5  hidden md:block bg-base-100 w-72 justify-items-center  overflow-y-auto ">
           {booksCatigories.map((sm, idx) => (
             <li key={idx}>
               <Link
@@ -296,9 +292,9 @@ export default function Demo() {
               .map((obj, idx) => (
                 <Link
                   href={`/demo?type=${page}&title=${obj.title}&floor=${obj.floor}&bookshelf=${obj.bookshelf}`}
+                  key={idx}
                 >
                   <div
-                    key={idx}
                     onClick={() => {
                       if (!ref.current) return;
                       ref.current.checked = true;
@@ -307,7 +303,14 @@ export default function Demo() {
                     className="card card-compact w-full h-full bg-base-100 shadow-xl"
                   >
                     <figure>
-                      <img src={obj.src} alt="Shoes" />
+                      <picture>
+                        <img
+                          src={obj.src}
+                          alt="Book"
+                          width={800}
+                          height={500}
+                        />
+                      </picture>
                     </figure>
                     <div className="card-body">
                       <h2 className="card-title  xl:text-sm 2xl:text-lg">
