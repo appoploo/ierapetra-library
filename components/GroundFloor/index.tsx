@@ -478,7 +478,7 @@ export function GroundFloor() {
           opacity="1"
           textAnchor="middle"
         >
-          <tspan
+          {/* <tspan
             id="tspan7870"
             x="-720.833"
             y="210.738"
@@ -507,7 +507,7 @@ export function GroundFloor() {
             fontWeight="normal"
           >
             {router.query.title}
-          </tspan>
+          </tspan> */}
         </text>
       </g>
     </svg>

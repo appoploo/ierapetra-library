@@ -1086,7 +1086,7 @@ export function FirstFloor() {
           fontWeight="normal"
           textAnchor="middle"
         >
-          <tspan
+          {/* <tspan
             id="tspan7870-0"
             x="-720.396"
             y="703.17"
@@ -1115,7 +1115,7 @@ export function FirstFloor() {
             fontWeight="normal"
           >
             {router.query.title}
-          </tspan>
+          </tspan> */}
         </text>
       </g>
     </svg>
