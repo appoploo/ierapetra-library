@@ -6,6 +6,7 @@ import { GroundFloor } from "../components/GroundFloor";
 import { FirstFloor } from "../components/FirstFoor";
 import axios from "axios";
 import useSWR from "swr";
+import Image from "next/image";
 
 const fetcher = (url: string) => axios.get(url).then((r) => r.data);
 
@@ -124,7 +125,7 @@ export default function Demo() {
                   className="card card-compact w-full h-full bg-base-100 shadow-xl"
                 >
                   <figure>
-                    <img alt="Shoes" />
+                    <img className="h-40" src="/images/Αγωγή.png" alt="Shoes" />
                   </figure>
                   <div className="card-body">
                     <h2 className="card-title  xl:text-sm 2xl:text-lg">
