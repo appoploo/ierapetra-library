@@ -11,7 +11,6 @@ const fetcher = (url: string) => axios.get(url).then((r) => r.data);
 
 type Book = {
   title: string;
-  src: string;
   floor: string;
   category: string;
   bookshelf: string;
@@ -47,13 +46,12 @@ export default function Demo() {
   const category = router.query.category as string;
   const title = router.query.title as string;
   const ref = useRef<HTMLInputElement>(null);
-  const [selectedBook, setSelectedBook] = useState<{
-    title: string;
-    src: string;
-    floor: string;
-    category: string;
-    bookshelf: string;
-  }>({ title: "", category: "", src: "", floor: "", bookshelf: "" });
+  const [selectedBook, setSelectedBook] = useState<Book>({
+    title: "",
+    category: "",
+    floor: "",
+    bookshelf: "",
+  });
   const { data: books } = useBooks(title, category);
   const { data: categories } = useCategories();
   return (
@@ -126,7 +124,7 @@ export default function Demo() {
                   className="card card-compact w-full h-full bg-base-100 shadow-xl"
                 >
                   <figure>
-                    <img src={obj.src} alt="Shoes" />
+                    <img alt="Shoes" />
                   </figure>
                   <div className="card-body">
                     <h2 className="card-title  xl:text-sm 2xl:text-lg">
