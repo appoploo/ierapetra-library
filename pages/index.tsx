@@ -12,8 +12,8 @@ const fetcher = (url: string) => axios.get(url).then((r) => r.data);
 
 type Book = {
   title: string;
-  floor: string;
   category: string;
+  floor: string;
   bookshelf: string;
 };
 
@@ -31,7 +31,7 @@ const useBooks = (title?: string, category?: string) => {
   };
 };
 
-type Category = { label: string; category: string };
+type Category = { label: string; category: string; src: string };
 
 const useCategories = () => {
   const { data, error } = useSWR<Category[]>("/api/categories", fetcher);
@@ -55,6 +55,10 @@ export default function Demo() {
   });
   const { data: books } = useBooks(title, category);
   const { data: categories } = useCategories();
+
+  const getCategorySrc = (category: string) => {
+    return categories.find((e) => e.category === category)?.src;
+  };
   return (
     <div className="h-screen overflow-hidden">
       <div className="flex   border justify-center items-center p-2 shadow">
@@ -74,7 +78,10 @@ export default function Demo() {
       </div>
 
       <div className=" grid   sm:grid-col-1 md:grid-cols-[300px_2fr]">
-        <ul className="xx menu h-screen border-r  mt-0.5  hidden md:block bg-base-100 w-72 justify-items-center  overflow-y-auto ">
+        <ul className="fixed-height menu h-screen border-r  mt-0.5  hidden md:block bg-base-100 w-72 justify-items-center  overflow-y-auto ">
+          <li>
+            <Link href={"/"}>Όλες</Link>
+          </li>
           {categories.map((sm, idx) => (
             <li key={idx}>
               <Link
@@ -83,13 +90,19 @@ export default function Demo() {
                   "active ": category === sm.category,
                 })}
               >
-                {sm.label}
+                {sm.category}
               </Link>
             </li>
           ))}
         </ul>
         <div className="h-screen md:p-8  p-0">
           <div className=" md:hidden  gap-x-3 flex text-sm font-bold w-screen overflow-x-auto  ">
+            <Link className="w-full h-full flex  items-center" href={"/"}>
+              <span className="py-3 whitespace-nowrap w-fit px-4 my-6 border text-center  rounded-lg  ">
+                Όλες
+              </span>
+            </Link>
+
             {categories.map((t, idx) => (
               <Link
                 key={idx}
@@ -104,7 +117,7 @@ export default function Demo() {
                     }
                   )}
                 >
-                  {t.label}
+                  {t.category}
                 </span>
               </Link>
             ))}
@@ -125,7 +138,13 @@ export default function Demo() {
                   className="card card-compact w-full h-full bg-base-100 shadow-xl"
                 >
                   <figure>
-                    <img className="h-40" src="/images/Αγωγή.png" alt="Shoes" />
+                    <picture>
+                      <img
+                        className="h-40"
+                        src={getCategorySrc(obj.category)}
+                        alt="Book"
+                      />
+                    </picture>
                   </figure>
                   <div className="card-body">
                     <h2 className="card-title  xl:text-sm 2xl:text-lg">
