@@ -6,6 +6,7 @@ export function FirstFloor() {
 
   return (
     <svg
+      className="block w-full h-full"
       xmlns="http://www.w3.org/2000/svg"
       id="svg5"
       version="1.1"

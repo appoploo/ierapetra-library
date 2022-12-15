@@ -45,7 +45,7 @@ const useCategories = () => {
 export default function Demo() {
   const router = useRouter();
   const category = router.query.category as string;
-  const title = router.query.title as string;
+  const searchTerm = router.query.searchTerm as string;
   const ref = useRef<HTMLInputElement>(null);
   const [selectedBook, setSelectedBook] = useState<Book>({
     title: "",
@@ -53,24 +53,26 @@ export default function Demo() {
     floor: "",
     bookshelf: "",
   });
-  const { data: books } = useBooks(title, category);
+  const [clicked, setClicked] = useState<boolean>(false);
+  const { data: books } = useBooks(searchTerm, category);
   const { data: categories } = useCategories();
 
   const getCategorySrc = (category: string) => {
     return categories.find((e) => e.category === category)?.src;
   };
+
   return (
     <div className="h-screen overflow-hidden">
       <div className="flex   border justify-center items-center p-2 shadow">
         <input
           type="text"
           placeholder="🔍 Search..."
-          className="input input-bordered  w-full md:w-1/3 rounded-full "
+          className="input input-bordered  w-full md:w-1/3 rounded-full case-"
           onChange={(evt) =>
             router.push({
               query: {
                 ...router.query,
-                title: evt.target.value,
+                searchTerm: evt.target.value,
               },
             })
           }
@@ -126,7 +128,15 @@ export default function Demo() {
           <div className="grid grid-col-1 lg:grid-cols-2 xl:grid-cols-4 gap-4 max-h-screen overflow-auto h-fit  p-8 pb-20">
             {books.map((obj, idx) => (
               <Link
-                href={`/?category=${category}&title=${obj.title}&floor=${obj.floor}&bookshelf=${obj.bookshelf}`}
+                href={{
+                  query: {
+                    ...router.query,
+                    title: obj.title,
+                    category: obj.category,
+                    floor: obj.floor,
+                    bookshelf: obj.bookshelf,
+                  },
+                }}
                 key={idx}
               >
                 <div
@@ -174,7 +184,7 @@ export default function Demo() {
         className="modal-toggle"
       />
       <div className="modal ">
-        <div className="modal-box relative w-  max-w-6xl lg:max-w-2xl xl:max-w-4xl ">
+        <div className="modal-box overflow-hidden relative lg:max-w-4xl lg:max-h-fit xl:max-w-full ">
           <label
             onClick={() => {
               if (!ref.current) return;
@@ -185,21 +195,57 @@ export default function Demo() {
             ✕
           </label>
 
-          <div className="">
-            <h3 className="font-bold text-center text-lg  gap-3 h-14 mb-3 ">
+          <div>
+            <h3 className="font-bold text-center md:text-lg  gap-3 h-14 mb-3 ">
               <span>{selectedBook.title}</span>
               <br />
               <span>{selectedBook.floor} </span>
               <span>{selectedBook.bookshelf}</span>
             </h3>
             <div className="divider"></div>
+            <div className="grid lg:grid-cols-[0.35fr_1fr] content-center md:h-full gap-2">
+              <div className="h-full w-full border-b  md:border-r ">
+                <p
+                  className={clsx(
+                    "md:line-clamp-none",
+                    {
+                      "line-clamp-none": clicked,
+                    },
+                    { "line-clamp-3": !clicked }
+                  )}
+                >
+                  djhfcjkdhfcjk djhfcjkdhfcjk djhfcjkdhfcjkdjhfcjkdhfcjk
+                  djhfcjkdhfcjk djhfcjkdhfcjk djhfc oajisaojisdjiso
+                  aidoosjaojsdojaisdjioasjoidas oijasjioasd
+                  iaooajisdodjiasjoaids oijsaojiajsdio sdasdjaldalkjsd
+                  asdlsjdlasdjkasdas sadaskldjasdjaksdljasd
+                  sadaskldjasdjaksdljasd sadaskldjasdjaksdljasd
+                  sadaskldjasdjaksdljasd sadaskldjasdjaksdljasd
+                  sadaskldjasdjaksdljasd sadaskldjasdjaksdljasd
+                  sadaskldjasdjaksdljasd sadaskldjasdjaksdljasd
+                </p>
+                <button
+                  className="btn btn-primary normal-case btn-xs text-sm md:hidden"
+                  onClick={() => setClicked((clicked) => !clicked)}
+                >
+                  Read more
+                </button>
+              </div>
 
-            <div className="flex justify-center  items-center ">
-              {selectedBook.floor === "ground" ? (
-                <GroundFloor />
-              ) : (
-                <FirstFloor />
-              )}
+              <div
+                className={clsx(
+                  " md:h-full  lg:h-[70vh] grid place-items-center w-full ",
+                  {
+                    " hidden": clicked,
+                  }
+                )}
+              >
+                {selectedBook.floor === "ground" ? (
+                  <GroundFloor />
+                ) : (
+                  <FirstFloor />
+                )}
+              </div>
             </div>
           </div>
         </div>

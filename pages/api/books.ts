@@ -185,13 +185,15 @@ const books: {
 ];
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const { category, title } = req.query;
+  let str = title as string;
+  const lowerCaseTitle = str?.toLowerCase();
   res.status(200).json(
     books.filter((book) => {
       const sameCategory = category ? book.category === category : true;
       const sameTitle = title
         ? title === ""
           ? true
-          : book.title.includes(title as string)
+          : book.title?.toLowerCase().includes(lowerCaseTitle)
         : true;
       return sameCategory && sameTitle;
     })
