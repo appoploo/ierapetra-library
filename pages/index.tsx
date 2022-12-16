@@ -53,7 +53,7 @@ export default function Demo() {
     floor: "",
     bookshelf: "",
   });
-  const [clicked, setClicked] = useState<boolean>(false);
+
   const { data: books } = useBooks(searchTerm, category);
   const { data: categories } = useCategories();
 
@@ -184,7 +184,7 @@ export default function Demo() {
         className="modal-toggle"
       />
       <div className="modal ">
-        <div className="modal-box overflow-hidden relative lg:max-w-4xl lg:max-h-fit xl:max-w-full ">
+        <div className="modal-box overflow-hidden relative lg:max-w-4xl lg:max-h-full xl:max-w-full ">
           <label
             onClick={() => {
               if (!ref.current) return;
@@ -194,58 +194,32 @@ export default function Demo() {
           >
             ✕
           </label>
+          <h3 className="font-bold flex justify-center items-center text-center border-b pb-4 mb-4 md:text-xl lg:text-lg xl:text-xl h-20   md:h-36 lg:h-20   lg:max-w-full  ">
+            <span>
+              ΤΙΤΛΟΣ / TITLE : <br /> {selectedBook.title}
+            </span>
+          </h3>
 
-          <div>
-            <h3 className="font-bold text-center md:text-lg  gap-3 h-14 mb-3 ">
-              <span>{selectedBook.title}</span>
-              <br />
-              <span>{selectedBook.floor} </span>
-              <span>{selectedBook.bookshelf}</span>
-            </h3>
-            <div className="divider"></div>
-            <div className="grid lg:grid-cols-[0.35fr_1fr] content-center md:h-full gap-2">
-              <div className="h-full w-full border-b  md:border-r ">
-                <p
-                  className={clsx(
-                    "md:line-clamp-none",
-                    {
-                      "line-clamp-none": clicked,
-                    },
-                    { "line-clamp-3": !clicked }
-                  )}
-                >
-                  djhfcjkdhfcjk djhfcjkdhfcjk djhfcjkdhfcjkdjhfcjkdhfcjk
-                  djhfcjkdhfcjk djhfcjkdhfcjk djhfc oajisaojisdjiso
-                  aidoosjaojsdojaisdjioasjoidas oijasjioasd
-                  iaooajisdodjiasjoaids oijsaojiajsdio sdasdjaldalkjsd
-                  asdlsjdlasdjkasdas sadaskldjasdjaksdljasd
-                  sadaskldjasdjaksdljasd sadaskldjasdjaksdljasd
-                  sadaskldjasdjaksdljasd sadaskldjasdjaksdljasd
-                  sadaskldjasdjaksdljasd sadaskldjasdjaksdljasd
-                  sadaskldjasdjaksdljasd sadaskldjasdjaksdljasd
-                </p>
-                <button
-                  className="btn btn-primary normal-case btn-xs text-sm md:hidden"
-                  onClick={() => setClicked((clicked) => !clicked)}
-                >
-                  Read more
-                </button>
-              </div>
+          <div className=" grid lg:grid lg:grid-cols-[1fr_2fr] content-center md:h-full gap-2">
+            <ul className="lg:max-w-md h-full w-full  lg:border-r text-xs md:text-lg lg:text-sm xl:text-lg">
+              <li className="font-semibold">
+                ΧΑΡΑΚΤΗΡΙΣΤΙΚΑ / CHARACTERISTICS
+              </li>
+              <li>ΣΥΓΓΡΑΦΕΑΣ/AUTHOR:</li>
+              <li>ΕΚΔΟΣΕΙΣ /PUBLISHER: </li> <li>ΕΤΟΣ / YEAR : </li>
+              <li>ISBN: </li> <li>ΚΑΤΗΓΟΡΙΑ / CATEGORY:</li>
+              <li className="font-semibold pt-4">ΘΕΣΗ / LOCATION</li>
+              <li>ΟΡΟΦΟΣ /FLOOR: {selectedBook.floor} </li>
+              <li>ΡΑΦΙ /SHELF: {selectedBook.bookshelf}</li>
+            </ul>
 
-              <div
-                className={clsx(
-                  " md:h-full  lg:h-[70vh] grid place-items-center w-full ",
-                  {
-                    " hidden": clicked,
-                  }
-                )}
-              >
-                {selectedBook.floor === "ground" ? (
-                  <GroundFloor />
-                ) : (
-                  <FirstFloor />
-                )}
-              </div>
+            <div className="divider lg:hidden"></div>
+            <div className=" md:h-full  lg:h-[50vh] 2xl:h-[70vh] grid place-items-center w-full ">
+              {selectedBook.floor === "ground" ? (
+                <GroundFloor />
+              ) : (
+                <FirstFloor />
+              )}
             </div>
           </div>
         </div>
