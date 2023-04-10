@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 import { useRouter } from "next/router";
 import { GroundFloor } from "../components/GroundFloor";
@@ -7,6 +7,8 @@ import { FirstFloor } from "../components/FirstFoor";
 import axios from "axios";
 import useSWR from "swr";
 import Image from "next/image";
+import { Res } from "./api/books";
+import Pagination from "../components/Pagination";
 
 const fetcher = (url: string) => axios.get(url).then((r) => r.data);
 
@@ -16,16 +18,17 @@ type Book = {
   floor: string;
   bookshelf: string;
 };
-
 const useBooks = (title?: string, category?: string) => {
-  const { data, error } = useSWR<Book[]>(
+  const router = useRouter();
+
+  const { data, error } = useSWR<Res>(
     `/api/books?category=${category ? category : ""}&title=${
       title ? title : ""
-    }`,
+    }&page=${router.query.page}`,
     fetcher
   );
   return {
-    data: data ?? ([] as Book[]),
+    data: data ?? ({} as Res),
     isLoading: !error && !data,
     isError: error,
   };
@@ -47,7 +50,9 @@ export default function Demo() {
   const category = router.query.category as string;
   const searchTerm = router.query.searchTerm as string;
   const ref = useRef<HTMLInputElement>(null);
-  const [selectedBook, setSelectedBook] = useState<Book>({
+  const [total, setTotal] = useState(0);
+
+  const [selectedBook, setSelectedBook] = useState<any>({
     title: "",
     category: "",
     floor: "",
@@ -60,6 +65,10 @@ export default function Demo() {
   const getCategorySrc = (category: string) => {
     return categories.find((e) => e.category === category)?.src;
   };
+
+  useEffect(() => {
+    if (books.totalPages) setTotal(books.totalPages ?? 0);
+  }, [books]);
 
   return (
     <div className="h-screen overflow-hidden">
@@ -97,7 +106,7 @@ export default function Demo() {
             </li>
           ))}
         </ul>
-        <div className="h-screen md:p-8  p-0">
+        <div className=" md:p-8  p-0">
           <div className=" md:hidden  gap-x-3 flex text-sm font-bold w-screen overflow-x-auto  ">
             <Link className="w-full h-full flex  items-center" href={"/"}>
               <span className="py-3 whitespace-nowrap w-fit px-4 my-6 border text-center  rounded-lg  ">
@@ -124,17 +133,18 @@ export default function Demo() {
               </Link>
             ))}
           </div>
-
-          <div className="grid grid-col-1 lg:grid-cols-2 xl:grid-cols-4 gap-4 max-h-screen overflow-auto h-fit  p-8 pb-20">
-            {books.map((obj, idx) => (
+          <div className="grid grid-col-1 h-[90vh] lg:grid-cols-2 xl:grid-cols-4 gap-4  overflow-auto">
+            {books?.content?.map((obj, idx) => (
               <Link
                 href={{
                   query: {
                     ...router.query,
-                    title: obj.title,
-                    category: obj.category,
-                    floor: obj.floor,
-                    bookshelf: obj.bookshelf,
+                    title: obj.label,
+                    category: obj.type?.name,
+                    // floor: obj.floor,
+                    // bookshelf: obj.bookshelf,
+                    floor: 1,
+                    bookshelf: 1,
                   },
                 }}
                 key={idx}
@@ -151,21 +161,21 @@ export default function Demo() {
                     <picture>
                       <img
                         className="h-40"
-                        src={getCategorySrc(obj.category)}
+                        src={getCategorySrc(obj.type.name)}
                         alt="Book"
                       />
                     </picture>
                   </figure>
                   <div className="card-body">
                     <h2 className="card-title  xl:text-sm 2xl:text-lg">
-                      {obj.title}
+                      {obj.label}
                     </h2>
                     <div className="font-medium xl:sticky xl:mb-8">
                       <span className="underline">Τοποθεσία </span>
                       <br />
                       <div className="flex gap-x-2  ">
-                        <span>όροφος:{obj.floor}</span>
-                        <span>ράφι:{obj.bookshelf}</span>
+                        {/* <span>όροφος:{obj.floor}</span> */}
+                        {/* <span>ράφι:{obj.bookshelf}</span> */}
                       </div>
                     </div>
                   </div>
@@ -173,6 +183,18 @@ export default function Demo() {
               </Link>
             ))}
           </div>
+          <Pagination
+            currentPage={router.query.page ? Number(router.query.page) : 1}
+            onPageChange={(page) => {
+              router.push({
+                query: {
+                  ...router.query,
+                  page: page,
+                },
+              });
+            }}
+            totalPages={total}
+          />
         </div>
       </div>
 
