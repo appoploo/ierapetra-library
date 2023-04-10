@@ -92,6 +92,7 @@ export default async function handler(
       redirect: "follow",
     }
   );
+  console.log(xx);
   const xxx = (await xx.json()) as Res;
   res.status(200).json(xxx);
 }
