@@ -273,7 +273,7 @@ export default function Demo() {
                         alt="Book"
                       />
                     </picture>
-                    <div className="card-body border">
+                    <div className="card-body h-40">
                       <h2 className="card-title  xl:text-sm 2xl:text-lg">
                         {obj.label}
                       </h2>
