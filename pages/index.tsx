@@ -34,7 +34,7 @@ const useBooks = (title?: string, category?: string) => {
   };
 };
 
-type Category = { label: string; category: string; src: string };
+type Category = { value: string; label: string; category: string; src: string };
 
 const useCategories = () => {
   const { data, error } = useSWR<Category[]>("/api/categories", fetcher);
@@ -96,9 +96,9 @@ export default function Demo() {
           {categories.map((sm, idx) => (
             <li key={idx}>
               <Link
-                href={`/?category=${sm.category}`}
+                href={`/?category=${sm.value}`}
                 className={clsx("whitespace-nowrap", {
-                  "active ": category === sm.category,
+                  "active ": category === sm.value,
                 })}
               >
                 {sm.category}
@@ -117,14 +117,14 @@ export default function Demo() {
             {categories.map((t, idx) => (
               <Link
                 key={idx}
-                href={`/?category=${t.category}`}
+                href={`/?category=${t.value}`}
                 className="w-full h-full flex  items-center"
               >
                 <span
                   className={clsx(
                     "py-3 whitespace-nowrap w-fit px-4 my-6 border text-center  rounded-lg  ",
                     {
-                      "bg-primary": category === t.category,
+                      "bg-primary": category === t.value,
                     }
                   )}
                 >
@@ -143,8 +143,8 @@ export default function Demo() {
                     category: obj.type?.name,
                     // floor: obj.floor,
                     // bookshelf: obj.bookshelf,
-                    floor: 1,
-                    bookshelf: 1,
+                    // floor: 1,
+                    // bookshelf: 1,
                   },
                 }}
                 key={idx}

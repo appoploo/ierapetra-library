@@ -64,34 +64,33 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { category, title } = req.query;
+  const { category, title, page = 1, searchTerm } = req.query;
 
-  var myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
-  myHeaders.append("X-TenantID", "ierapetra");
-  myHeaders.append("Authorization", process?.env["AUTHORIZATION"] ?? "");
-
-  var raw = JSON.stringify({
-    value: "",
+  let data = JSON.stringify({
+    value: searchTerm,
     containerTypes: ["67ec2653-6dda-492a-8a1a-f3cb3dcc0cbf"],
+    propertyValueFilters: [
+      {
+        propertyUuid: "9d6a626f-b57d-43ae-b00c-77cd7a962384",
+        propertyValue: "dokimia",
+        logicalOperator: "AND",
+        operator: "CONTAINS",
+      },
+    ],
   });
-
-  var requestOptions = {
-    method: "POST",
-    headers: myHeaders,
-    body: raw,
-    redirect: "follow",
-  };
-  const page = req.query.page || 1;
-  const xx = await fetch(
-    `https://storev2-api.repox.io/public/containers/search?page=${page}&sort=label,asc`,
+  let offset = Number(page === "undefined" ? 1 : page);
+  const repoxRes = await axios.post(
+    `https://storev2-api.repox.io/public/containers/search?page=${offset}&sort=label,asc`,
+    data,
     {
-      method: "POST",
-      headers: myHeaders,
-      body: raw,
-      redirect: "follow",
+      headers: {
+        "Content-Type": "application/json",
+        "X-TenantID": "ierapetra",
+        Authorization:
+          "SeeT7tGPvXOAK0pMdNdlEBvJbt3z3OGebB14Ur4IiWtDWuWDRNqOi+57A15LS8WaBpezStlJX7wtbCzRuTVjmd8DNLtyJMqZqBRHZm3EJCm04EQecyLpU/4Ew5hwkOUyzKCTD9PVZSE4Ay2Mq7fcUd56vPEP4KGj0+TLpnxazus=",
+      },
     }
   );
-  const xxx = (await xx.json()) as Res;
-  res.status(200).json(xxx);
+  const repoxData = await repoxRes.data;
+  res.status(200).json(repoxData);
 }
