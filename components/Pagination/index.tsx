@@ -61,7 +61,7 @@ const Pagination: React.FC<PaginationProps> = ({
   const showLastPage = endLink < totalPages;
 
   return (
-    <nav className=" h-fit border bg-white shadow w-fit fixed bottom-0 md:left-[40%] left-0 p-2 rounded-t-md">
+    <nav className=" h-full  bg-white mx-auto border   p-2 rounded-md">
       <ul className="flex pl-0 rounded list-none flex-wrap items-center">
         {showPrevLink && (
           <li>

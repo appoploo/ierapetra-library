@@ -36,6 +36,14 @@ export type Res = {
   content: Book[];
   pageable: Pageable;
   totalPages: number;
+  properties: [
+    {
+      uuid: string;
+      propertyUuid: string;
+      value: string;
+      attributes: any[];
+    }
+  ];
   totalElements: number;
   last: boolean;
   number: number;
@@ -64,7 +72,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { category, title, page = 1, searchTerm } = req.query;
+  const { category = "", title, page = 1, searchTerm } = req.query;
 
   let data = JSON.stringify({
     value: searchTerm,
@@ -72,25 +80,30 @@ export default async function handler(
     propertyValueFilters: [
       {
         propertyUuid: "9d6a626f-b57d-43ae-b00c-77cd7a962384",
-        propertyValue: "dokimia",
+        propertyValue: category,
         logicalOperator: "AND",
         operator: "CONTAINS",
       },
     ],
   });
   let offset = Number(page === "undefined" ? 1 : page);
-  const repoxRes = await axios.post(
-    `https://storev2-api.repox.io/public/containers/search?page=${offset}&sort=label,asc`,
-    data,
-    {
-      headers: {
-        "Content-Type": "application/json",
-        "X-TenantID": "ierapetra",
-        Authorization:
-          "SeeT7tGPvXOAK0pMdNdlEBvJbt3z3OGebB14Ur4IiWtDWuWDRNqOi+57A15LS8WaBpezStlJX7wtbCzRuTVjmd8DNLtyJMqZqBRHZm3EJCm04EQecyLpU/4Ew5hwkOUyzKCTD9PVZSE4Ay2Mq7fcUd56vPEP4KGj0+TLpnxazus=",
-      },
-    }
-  );
-  const repoxData = await repoxRes.data;
-  res.status(200).json(repoxData);
+  const url = `https://storev2-api.repox.io/public/containers/search?page=${offset}&sort=label,asc`;
+
+  await fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "X-TenantID": "ierapetra",
+      Authorization:
+        "SeeT7tGPvXOAK0pMdNdlEBvJbt3z3OGebB14Ur4IiWtDWuWDRNqOi+57A15LS8WaBpezStlJX7wtbCzRuTVjmd8DNLtyJMqZqBRHZm3EJCm04EQecyLpU/4Ew5hwkOUyzKCTD9PVZSE4Ay2Mq7fcUd56vPEP4KGj0+TLpnxazus=",
+    },
+    body: data,
+  })
+    .then((response) => response.json())
+    .then((repoxData) => {
+      res.status(200).json(repoxData);
+    })
+    .catch((error) => {
+      res.status(500).json({ error });
+    });
 }

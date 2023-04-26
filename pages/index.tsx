@@ -10,6 +10,112 @@ import Image from "next/image";
 import { Res } from "./api/books";
 import Pagination from "../components/Pagination";
 
+const mapFirstLetterToCategoryIdx: Record<string, any> = {
+  // English letters
+  a: 0,
+  b: 1,
+  c: 2,
+  d: 3,
+  e: 4,
+  f: 5,
+  g: 6,
+  h: 7,
+  i: 8,
+  j: 9,
+  k: 10,
+  l: 11,
+  m: 12,
+  n: 13,
+  o: 14,
+  p: 15,
+  q: 16,
+  r: 17,
+  s: 18,
+  t: 19,
+  u: 20,
+  v: 21,
+  w: 22,
+  x: 23,
+  y: 24,
+  z: 25,
+
+  // Greek letters
+  α: 26,
+  β: 27,
+  γ: 28,
+  δ: 29,
+  ε: 30,
+  ζ: 31,
+  η: 32,
+  θ: 33,
+  ι: 34,
+  κ: 35,
+  λ: 36,
+  μ: 37,
+  ν: 38,
+  ξ: 39,
+  ο: 40,
+  π: 41,
+  ρ: 42,
+  σ: 43,
+  τ: 44,
+  υ: 45,
+  φ: 46,
+  χ: 47,
+  ψ: 48,
+  ω: 49,
+
+  // Numbers
+  "0": 50,
+  "1": 51,
+  "2": 52,
+  "3": 53,
+  "4": 54,
+  "5": 55,
+  "6": 56,
+  "7": 57,
+  "8": 58,
+  "9": 59,
+
+  // Symbols
+  "-": 60,
+  _: 61,
+  ".": 62,
+  ",": 63,
+  ":": 64,
+  ";": 65,
+  "!": 66,
+  "?": 67,
+  "@": 68,
+  "#": 69,
+  $: 70,
+  "%": 71,
+  "&": 72,
+  "*": 73,
+  "+": 74,
+  "=": 75,
+  "/": 76,
+  "\\": 77,
+  "|": 78,
+  "~": 79,
+  "`": 80,
+  "^": 81,
+  "(": 82,
+  ")": 83,
+  "{": 84,
+  "}": 85,
+  "[": 86,
+  "]": 87,
+  "<": 88,
+  ">": 89,
+  '"': 90,
+  "'": 91,
+  "’": 92,
+  "‘": 93,
+  "“": 94,
+  "”": 95,
+};
+
 const fetcher = (url: string) => axios.get(url).then((r) => r.data);
 
 type Book = {
@@ -24,7 +130,7 @@ const useBooks = (title?: string, category?: string) => {
   const { data, error } = useSWR<Res>(
     `/api/books?category=${category ? category : ""}&title=${
       title ? title : ""
-    }&page=${router.query.page}`,
+    }&page=${router.query.page}&searchTerm=${router.query.searchTerm ?? ""}`,
     fetcher
   );
   return {
@@ -63,20 +169,22 @@ export default function Demo() {
   const { data: categories } = useCategories();
 
   const getCategorySrc = (category: string) => {
-    return categories.find((e) => e.category === category)?.src;
+    const firstLetter = category[0].toLocaleLowerCase();
+    const idx = mapFirstLetterToCategoryIdx[firstLetter] % categories.length;
+    return categories[idx]?.src;
   };
 
   useEffect(() => {
-    if (books.totalPages) setTotal(books.totalPages ?? 0);
+    if (books.totalPages) setTotal(books.totalPages - 1 ?? 0);
   }, [books]);
 
   return (
-    <div className="h-screen overflow-hidden">
-      <div className="flex   border justify-center items-center p-2 shadow">
+    <div className="h-screen">
+      <div className="flex z-50 sticky top-0 bg-white  border justify-center items-center p-2 shadow">
         <input
           type="text"
           placeholder="🔍 Search..."
-          className="input input-bordered  w-full md:w-1/3 rounded-full case-"
+          className="input input-bordered  w-full md:w-1/3  rounded-full"
           onChange={(evt) =>
             router.push({
               query: {
@@ -88,8 +196,8 @@ export default function Demo() {
         />
       </div>
 
-      <div className=" grid   sm:grid-col-1 md:grid-cols-[300px_2fr]">
-        <ul className="fixed-height menu h-screen border-r  mt-0.5  hidden md:block bg-base-100 w-72 justify-items-center  overflow-y-auto ">
+      <div className=" grid  sm:grid-col-1 md:grid-cols-[300px_2fr]">
+        <ul className="h-full menu  border-r  mt-0.5  hidden md:block bg-base-100 w-72 justify-items-center  ">
           <li>
             <Link href={"/"}>Όλες</Link>
           </li>
@@ -106,7 +214,7 @@ export default function Demo() {
             </li>
           ))}
         </ul>
-        <div className=" md:p-8  p-0">
+        <div className="md:p-4 md:pb-0   h-fit">
           <div className=" md:hidden  gap-x-3 flex text-sm font-bold w-screen overflow-x-auto  ">
             <Link className="w-full h-full flex  items-center" href={"/"}>
               <span className="py-3 whitespace-nowrap w-fit px-4 my-6 border text-center  rounded-lg  ">
@@ -133,68 +241,70 @@ export default function Demo() {
               </Link>
             ))}
           </div>
-          <div className="grid grid-col-1 h-[90vh] lg:grid-cols-2 xl:grid-cols-4 gap-4  overflow-auto">
-            {books?.content?.map((obj, idx) => (
-              <Link
-                href={{
-                  query: {
-                    ...router.query,
-                    title: obj.label,
-                    category: obj.type?.name,
-                    // floor: obj.floor,
-                    // bookshelf: obj.bookshelf,
-                    // floor: 1,
-                    // bookshelf: 1,
-                  },
-                }}
-                key={idx}
-              >
-                <div
-                  onClick={() => {
-                    if (!ref.current) return;
-                    ref.current.checked = true;
-                    setSelectedBook(obj);
+          <div className="flex flex-col h-full">
+            <div className="grid grid-col-1 h-full  lg:grid-cols-2 xl:grid-cols-4 gap-4 ">
+              {books?.content?.map((obj, idx) => (
+                <Link
+                  href={{
+                    query: {
+                      ...router.query,
+                      title: obj.label,
+                      category: obj.type?.name,
+                      // floor: obj.floor,
+                      // bookshelf: obj.bookshelf,
+                      // floor: 1,
+                      // bookshelf: 1,
+                    },
                   }}
-                  className="card card-compact w-full h-full bg-base-100 shadow-xl"
+                  key={idx}
                 >
-                  <figure>
+                  <div
+                    onClick={() => {
+                      if (!ref.current) return;
+                      ref.current.checked = true;
+                      setSelectedBook(obj);
+                    }}
+                    className="card card-compact shadow w-full bg-base-100 border h-fit"
+                  >
                     <picture>
                       <img
-                        className="h-40"
-                        src={getCategorySrc(obj.type.name)}
+                        className="h-40 w-full rounded-t-lg"
+                        src={getCategorySrc(obj.label)}
                         alt="Book"
                       />
                     </picture>
-                  </figure>
-                  <div className="card-body">
-                    <h2 className="card-title  xl:text-sm 2xl:text-lg">
-                      {obj.label}
-                    </h2>
-                    <div className="font-medium xl:sticky xl:mb-8">
-                      <span className="underline">Τοποθεσία </span>
-                      <br />
-                      <div className="flex gap-x-2  ">
-                        {/* <span>όροφος:{obj.floor}</span> */}
-                        {/* <span>ράφι:{obj.bookshelf}</span> */}
+                    <div className="card-body border">
+                      <h2 className="card-title  xl:text-sm 2xl:text-lg">
+                        {obj.label}
+                      </h2>
+                      <div className="font-medium xl:sticky xl:mb-8">
+                        <span className="underline">Τοποθεσία </span>
+                        <br />
+                        <div className="flex gap-x-2  ">
+                          {/* <span>όροφος:{obj.floor}</span> */}
+                          {/* <span>ράφι:{obj.bookshelf}</span> */}
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              ))}
+            </div>
+            <div className="mt-4 w-full flex">
+              <Pagination
+                currentPage={router.query.page ? Number(router.query.page) : 1}
+                onPageChange={(page) => {
+                  router.push({
+                    query: {
+                      ...router.query,
+                      page: page,
+                    },
+                  });
+                }}
+                totalPages={total}
+              />
+            </div>
           </div>
-          <Pagination
-            currentPage={router.query.page ? Number(router.query.page) : 1}
-            onPageChange={(page) => {
-              router.push({
-                query: {
-                  ...router.query,
-                  page: page,
-                },
-              });
-            }}
-            totalPages={total}
-          />
         </div>
       </div>
 

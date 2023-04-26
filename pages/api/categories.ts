@@ -7,7 +7,7 @@ const categories: { value: string; category: string; src: string }[] = [
     src: "/category-images/Αγωγή.png",
   },
   {
-    value: "arxaioi-ellenes-suggrafeis",
+    value: "arxaioi-ellhnes-syggrafeis",
     category: "Αρχαίοι Έλληνες Συγγραφείς",
     src: "/category-images/Αρχαίοι Έλληνες Συγγραφείς.png",
   },
@@ -22,7 +22,7 @@ const categories: { value: string; category: string; src: string }[] = [
     src: "/category-images/Βιογραφίες.png",
   },
   {
-    value: "genika-themata",
+    value: "genika-8emata",
     category: "Γενικά Θέματα",
     src: "/category-images/Γενικά Θέματα.png",
   },
@@ -42,7 +42,7 @@ const categories: { value: string; category: string; src: string }[] = [
     src: "/category-images/Δοκίμια.png",
   },
   {
-    value: "egkuklopaideies",
+    value: "egkyklopaideies",
     category: "Εγκυκλοπαίδειες",
     src: "/category-images/Εγκυκλοπαίδειες.png",
   },
@@ -52,17 +52,17 @@ const categories: { value: string; category: string; src: string }[] = [
     src: "/category-images/Ελληνική Λογοτεχνία.png",
   },
   {
-    value: "efhvikh-logotexnia",
+    value: "efhbikh-logotexnia",
     category: "Εφηβική Λογοτεχνία",
     src: "/category-images/Εφηβική Λογοτεχνία.png",
   },
   {
-    value: "thriskia",
+    value: "8rhskeia",
     category: "Θρησκεία",
     src: "/category-images/Θρησκεία.png",
   },
   {
-    value: "iatrika",
+    value: "iatrikh",
     category: "Ιατρική",
     src: "/category-images/Ιατρική.png",
   },
@@ -82,7 +82,7 @@ const categories: { value: string; category: string; src: string }[] = [
     src: "/category-images/Κόμικ.png",
   },
   {
-    value: "kriti-paradosi-istoria",
+    value: "krhth-paradosh-istoria",
     category: "Κρήτη - Παράδοση - Ιστορία",
     src: "/category-images/Κρήτη - Παράδοση - Ιστορία.png",
   },
@@ -92,27 +92,27 @@ const categories: { value: string; category: string; src: string }[] = [
     src: "/category-images/Λαογραφία.png",
   },
   {
-    value: "lexika",
+    value: "le3ika",
     category: "Λεξικά",
     src: "/category-images/Λεξικά.png",
   },
   {
-    value: "leukwmata",
+    value: "leykwmata",
     category: "Λευκώματα",
-    src: "/category-images/Λευκώματα.png",
+    src: "/category-images/Λευκωματα.png",
   },
   {
-    value: "mythologia",
+    value: "my8ologia",
     category: "Μυθολογία",
     src: "/category-images/Μυθολογία.png",
   },
   {
-    value: "nomiki-epistimi",
+    value: "nomikh-episthmh",
     category: "Νομική Επιστήμη",
     src: "/category-images/Νομική Επιστήμη.png",
   },
   {
-    value: "xenoglwssa",
+    value: "3enoglwssa",
     category: "Ξενόγλωσσα",
     src: "/category-images/Ξενόγλωσσα.png",
   },
@@ -137,12 +137,12 @@ const categories: { value: string; category: string; src: string }[] = [
     src: "/category-images/ΠΕΚ.png",
   },
   {
-    value: "poiisi",
+    value: "poihsh",
     category: "Ποίηση",
     src: "/category-images/Ποίηση.png",
   },
   {
-    value: "politiki",
+    value: "politikh",
     category: "Πολιτική",
     src: "/category-images/Πολιτική.png",
   },
