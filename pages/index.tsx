@@ -183,14 +183,17 @@ export default function Demo() {
   }, [books]);
 
   const t = useT();
-
+  const locale = router.locale;
+  const setLang = (e: string) => {
+    if (typeof window !== "undefined") localStorage.setItem("lang", e);
+  };
   return (
     <div className="h-screen">
       <div className="flex z-50 sticky top-0 bg-white  border justify-center items-center p-2 shadow">
         <input
           type="text"
           placeholder="🔍 Search..."
-          className="input input-bordered  w-full md:w-1/3  rounded-full"
+          className="input  input-bordered  w-full md:w-1/3  rounded-full"
           onChange={(evt) =>
             router.push({
               query: {
@@ -200,6 +203,22 @@ export default function Demo() {
             })
           }
         />
+        <select
+          value={locale}
+          onChange={(evt) => {
+            const locale = evt.currentTarget.value;
+            setLang(locale);
+            router.push("/", "/", { locale });
+          }}
+          className="w-fit  right-0  bottom-0 md:top-0  fixed h-16 border"
+        >
+          <option value="en">
+            🇬🇧 &nbsp; {(locale === "el" ? "ΑΓΓΛΙΚΑ" : `English`).toUpperCase()}
+          </option>
+          <option value="el">
+            🇬🇷 &nbsp;{(locale === "el" ? "ΕΛΛΗΝΙΚΑ" : `Greek`).toUpperCase()}
+          </option>
+        </select>
       </div>
 
       <div className=" grid  sm:grid-col-1 md:grid-cols-[300px_2fr]">
