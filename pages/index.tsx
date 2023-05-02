@@ -358,40 +358,39 @@ export default function Demo() {
           </h3>
 
           <div className=" grid lg:grid lg:grid-cols-[1fr_2fr] content-center md:h-full gap-2">
-            <ul className="lg:max-w-md uppercase h-full w-full  lg:border-r text-xs md:text-lg lg:text-sm xl:text-lg">
-              <li className="font-semibold">{t("characteristics")}:</li>
-              <li>
+            <ul className="lg:max-w-md uppercase h-full w-fit  lg:border-r text-xs md:text-lg lg:text-sm xl:text-lg">
+              <li className="font-semibold">{t("characteristics")}</li>
+              <li className="grid grid-cols-[1fr_2fr] mt-2 w-full ">
                 <span className="text-md mr-2">{t("author")}:&nbsp; </span>
 
                 <span className="font-bold">{bookValues?.at(0)}</span>
               </li>
-              <li>
+              <li className="grid grid-cols-[1fr_2fr] mt-2 w-full ">
                 <span className="text-md mr-2">{t("publisher")}:&nbsp; </span>
-
                 <span className="font-bold">{bookValues?.at(2)}</span>
               </li>{" "}
-              <li>
+              <li className="grid grid-cols-[1fr_2fr] mt-2 w-full ">
                 <span className="text-md mr-2">{t("year")}:&nbsp; </span>
 
                 <span className="font-bold">{bookValues?.at(3)}</span>
               </li>
-              <li>
+              <li className="grid grid-cols-[1fr_2fr] mt-2 w-full ">
                 ISBN:
                 <span className="font-bold">{bookValues?.at(5)}</span>
               </li>
-              <li>
+              <li className="grid grid-cols-[1fr_2fr] mt-2 w-full ">
                 {t("category")}:&nbsp;
                 <span className="font-bold">{bookValues?.at(6)}</span>
               </li>
               <li className="font-semibold pt-4">
                 <span className="font-bold">{t("location")}</span>
               </li>
-              <li>
+              <li className="grid grid-cols-[1fr_2fr] mt-2 w-full ">
                 <span className="text-md mr-2">{t("floor")}:&nbsp; </span>
 
                 <span className="font-bold">{bookValues?.at(7)} </span>
               </li>
-              <li>
+              <li className="grid grid-cols-[1fr_2fr] mt-2 w-full ">
                 <span className="text-md mr-2">{t("shelf")}:&nbsp; </span>
 
                 <span className="font-bold">{bookValues?.at(8)}</span>
