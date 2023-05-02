@@ -12,6 +12,17 @@ import Pagination from "../components/Pagination";
 import { useT } from "../hooks/useT";
 import { Book } from "./api/book";
 
+const uuidToMap = {
+  author: "36451f30-6339-4195-be6f-c6983fce0135",
+  title: "36226e92-62e5-486d-8845-8a29bc0308e1",
+  ISBN: "e68c884f-66f6-483d-a2e4-04e8c981f857",
+  publisher: "74b5ce69-f1c4-49d7-9a0a-499bc0cee052",
+  category: "9d6a626f-b57d-43ae-b00c-77cd7a962384",
+  floor: "bc0751b0-9231-4f19-8c39-197aa77cdb86",
+  shelf: "e9ec22ac-882a-4a6e-ad6f-e4491c2d4305",
+  year: "4b13aeda-53af-4044-95ac-b48d8a839120",
+};
+
 const mapFirstLetterToCategoryIdx: Record<string, any> = {
   // English letters
   a: 0,
@@ -147,7 +158,13 @@ function useBook() {
   };
 }
 
-type Category = { value: string; label: string; category: string; src: string };
+type Category = {
+  value: string;
+  label: string;
+  categoryEn: string;
+  category: string;
+  src: string;
+};
 
 const useCategories = () => {
   const { data, error } = useSWR<Category[]>("/api/categories", fetcher);
@@ -175,8 +192,31 @@ export default function Demo() {
     return categories[idx]?.src;
   };
 
-  console.log(book);
-  const bookValues = book.properties?.map((p) => p.value);
+  const author =
+    book.properties?.find((p) => p.propertyUuid === uuidToMap["author"])
+      ?.value ?? "-";
+  const title =
+    book.properties?.find((p) => p.propertyUuid === uuidToMap["title"])
+      ?.value ?? "-";
+  const cat = book.properties?.find(
+    (p) => p.propertyUuid === uuidToMap["category"]
+  )?.value;
+
+  const isbn =
+    book.properties?.find((p) => p.propertyUuid === uuidToMap["ISBN"])?.value ??
+    "-";
+  const publisher =
+    book.properties?.find((p) => p.propertyUuid === uuidToMap["publisher"])
+      ?.value ?? "-";
+  const floor =
+    book.properties?.find((p) => p.propertyUuid === uuidToMap["floor"])
+      ?.value ?? "-";
+  const shelf =
+    book.properties?.find((p) => p.propertyUuid === uuidToMap["shelf"])
+      ?.value ?? "-";
+  const year =
+    book.properties?.find((p) => p.propertyUuid === uuidToMap["year"])?.value ??
+    "-";
 
   useEffect(() => {
     if (books.totalPages) setTotal(books.totalPages - 1 ?? 0);
@@ -187,6 +227,13 @@ export default function Demo() {
   const setLang = (e: string) => {
     if (typeof window !== "undefined") localStorage.setItem("lang", e);
   };
+
+  function catToLabel(cat?: string) {
+    if (!cat) return "-";
+    const obj = categories.find((c) => c.value === cat);
+    return router.locale === "en" ? obj?.categoryEn : obj?.category;
+  }
+
   return (
     <div className="h-screen">
       <div className="flex z-50 sticky top-0 bg-white  border justify-center items-center p-2 shadow">
@@ -234,7 +281,7 @@ export default function Demo() {
                   "active ": category === sm.value,
                 })}
               >
-                {sm.category}
+                {catToLabel(sm?.value)}
               </Link>
             </li>
           ))}
@@ -353,7 +400,7 @@ export default function Demo() {
           </label>
           <h3 className="font-bold flex justify-center items-center text-center border-b pb-4 mb-4 md:text-xl lg:text-lg xl:text-xl h-20   md:h-36 lg:h-20   lg:max-w-full  ">
             <span>
-              {t("title")} : <br /> {book?.label}
+              {t("title")} : <br /> {title}
             </span>
           </h3>
 
@@ -363,24 +410,24 @@ export default function Demo() {
               <li className="grid grid-cols-[1fr_2fr] mt-2 w-full ">
                 <span className="text-md mr-2">{t("author")}:&nbsp; </span>
 
-                <span className="font-bold">{bookValues?.at(0)}</span>
+                <span className="font-bold">{author}</span>
               </li>
               <li className="grid grid-cols-[1fr_2fr] mt-2 w-full ">
                 <span className="text-md mr-2">{t("publisher")}:&nbsp; </span>
-                <span className="font-bold">{bookValues?.at(2)}</span>
+                <span className="font-bold">{publisher}</span>
               </li>{" "}
               <li className="grid grid-cols-[1fr_2fr] mt-2 w-full ">
                 <span className="text-md mr-2">{t("year")}:&nbsp; </span>
 
-                <span className="font-bold">{bookValues?.at(3)}</span>
+                <span className="font-bold">{year}</span>
               </li>
               <li className="grid grid-cols-[1fr_2fr] mt-2 w-full ">
                 ISBN:
-                <span className="font-bold">{bookValues?.at(5)}</span>
+                <span className="font-bold">{isbn}</span>
               </li>
               <li className="grid grid-cols-[1fr_2fr] mt-2 w-full ">
                 {t("category")}:&nbsp;
-                <span className="font-bold">{bookValues?.at(6)}</span>
+                <span className="font-bold">{catToLabel(cat?.at(0))}</span>
               </li>
               <li className="font-semibold pt-4">
                 <span className="font-bold">{t("location")}</span>
@@ -388,21 +435,21 @@ export default function Demo() {
               <li className="grid grid-cols-[1fr_2fr] mt-2 w-full ">
                 <span className="text-md mr-2">{t("floor")}:&nbsp; </span>
 
-                <span className="font-bold">{bookValues?.at(7)} </span>
+                <span className="font-bold">{floor} </span>
               </li>
               <li className="grid grid-cols-[1fr_2fr] mt-2 w-full ">
                 <span className="text-md mr-2">{t("shelf")}:&nbsp; </span>
 
-                <span className="font-bold">{bookValues?.at(8)}</span>
+                <span className="font-bold">{shelf}</span>
               </li>
             </ul>
 
             <div className="divider lg:hidden"></div>
             <div className=" md:h-full  lg:h-[50vh] 2xl:h-[70vh] grid place-items-center w-full ">
-              {Number(bookValues?.at(7)) === 0 ? (
-                <GroundFloor bookshelf={bookValues?.at(8) as string} />
+              {Number(floor) === 0 ? (
+                <GroundFloor bookshelf={shelf as string} />
               ) : (
-                <FirstFloor bookshelf={bookValues?.at(8) as string} />
+                <FirstFloor bookshelf={shelf as string} />
               )}
             </div>
           </div>
