@@ -1,8 +1,7 @@
 import { useRouter } from "next/router";
 
-export function GroundFloor() {
+export function GroundFloor(props: { bookshelf: string }) {
   const router = useRouter();
-  const bookshelf = router.query.bookshelf;
   return (
     <svg
       className="block w-full h-full"
@@ -44,7 +43,7 @@ export function GroundFloor() {
         ></path>
         <path
           id="19a"
-          fill={bookshelf === "19a" ? "green" : "#502d16"}
+          fill={props.bookshelf === "19a" ? "green" : "#502d16"}
           fillOpacity="0.787"
           stroke="#000"
           strokeDasharray="none"
@@ -55,7 +54,7 @@ export function GroundFloor() {
         <a id="19b">
           <path
             id="rect3877-1"
-            fill={bookshelf === "19b" ? "green" : "#502d16"}
+            fill={props.bookshelf === "19b" ? "green" : "#502d16"}
             fillOpacity="0.787"
             stroke="#000"
             strokeDasharray="none"
@@ -66,7 +65,7 @@ export function GroundFloor() {
         </a>
         <path
           id="20a"
-          fill={bookshelf === "20a" ? "green" : "#502d16"}
+          fill={props.bookshelf === "20a" ? "green" : "#502d16"}
           fillOpacity="0.787"
           stroke="#000"
           strokeDasharray="none"
@@ -76,7 +75,7 @@ export function GroundFloor() {
         ></path>
         <path
           id="20b"
-          fill={bookshelf === "20b" ? "green" : "#502d16"}
+          fill={props.bookshelf === "20b" ? "green" : "#502d16"}
           fillOpacity="0.787"
           stroke="#000"
           strokeDasharray="none"
@@ -86,7 +85,7 @@ export function GroundFloor() {
         ></path>
         <path
           id="21a"
-          fill={bookshelf === "21a" ? "green" : "#502d16"}
+          fill={props.bookshelf === "21a" ? "green" : "#502d16"}
           fillOpacity="0.787"
           stroke="#000"
           strokeDasharray="none"
@@ -96,7 +95,7 @@ export function GroundFloor() {
         ></path>
         <path
           id="22b"
-          fill={bookshelf === "22b" ? "green" : "#502d16"}
+          fill={props.bookshelf === "22b" ? "green" : "#502d16"}
           fillOpacity="0.787"
           stroke="#000"
           strokeDasharray="none"
@@ -106,7 +105,7 @@ export function GroundFloor() {
         ></path>
         <path
           id="21b"
-          fill={bookshelf === "21b" ? "green" : "#502d16"}
+          fill={props.bookshelf === "21b" ? "green" : "#502d16"}
           fillOpacity="0.787"
           stroke="#000"
           strokeDasharray="none"
@@ -116,7 +115,7 @@ export function GroundFloor() {
         ></path>
         <path
           id="22a"
-          fill={bookshelf === "22a" ? "green" : "#502d16"}
+          fill={props.bookshelf === "22a" ? "green" : "#502d16"}
           fillOpacity="0.787"
           stroke="#000"
           strokeDasharray="none"

@@ -1,8 +1,7 @@
 import { useRouter } from "next/router";
 
-export function FirstFloor() {
+export function FirstFloor(props: { bookshelf: string }) {
   const router = useRouter();
-  const bookshelf = router.query.bookshelf;
 
   return (
     <svg
@@ -81,7 +80,7 @@ export function FirstFloor() {
         ></path>
         <path
           id="1"
-          fill={bookshelf === "1" ? "green" : "#502d16"}
+          fill={props.bookshelf === "1" ? "green" : "#502d16"}
           fillOpacity="0.787"
           stroke="#000"
           strokeWidth="0.681"
@@ -89,7 +88,7 @@ export function FirstFloor() {
         ></path>
         <path
           id="8"
-          fill={bookshelf === "8" ? "green" : "#502d16"}
+          fill={props.bookshelf === "8" ? "green" : "#502d16"}
           fillOpacity="0.787"
           stroke="#000"
           strokeWidth="0.884"
@@ -98,7 +97,7 @@ export function FirstFloor() {
         ></path>
         <path
           id="7"
-          fill={bookshelf === "7" ? "green" : "#502d16"}
+          fill={props.bookshelf === "7" ? "green" : "#502d16"}
           fillOpacity="0.787"
           stroke="#000"
           strokeWidth="0.691"
@@ -107,7 +106,7 @@ export function FirstFloor() {
         ></path>
         <path
           id="14"
-          fill={bookshelf === "14" ? "green" : "#502d16"}
+          fill={props.bookshelf === "14" ? "green" : "#502d16"}
           fillOpacity="0.787"
           stroke="#000"
           strokeWidth="0.58"
@@ -116,7 +115,7 @@ export function FirstFloor() {
         ></path>
         <path
           id="16"
-          fill={bookshelf === "16" ? "green" : "#502d16"}
+          fill={props.bookshelf === "16" ? "green" : "#502d16"}
           fillOpacity="0.787"
           stroke="#000"
           strokeWidth="0.494"
@@ -125,7 +124,7 @@ export function FirstFloor() {
         ></path>
         <path
           id="12"
-          fill={bookshelf === "12" ? "green" : "#502d16"}
+          fill={props.bookshelf === "12" ? "green" : "#502d16"}
           fillOpacity="0.787"
           stroke="#000"
           strokeWidth="0.494"
@@ -134,7 +133,7 @@ export function FirstFloor() {
         ></path>
         <path
           id="9"
-          fill={bookshelf === "9" ? "green" : "#502d16"}
+          fill={props.bookshelf === "9" ? "green" : "#502d16"}
           fillOpacity="0.787"
           stroke="#000"
           strokeWidth="0.651"
@@ -142,7 +141,7 @@ export function FirstFloor() {
         ></path>
         <path
           id="10"
-          fill={bookshelf === "10" ? "green" : "#502d16"}
+          fill={props.bookshelf === "10" ? "green" : "#502d16"}
           fillOpacity="0.787"
           stroke="#000"
           strokeWidth="0.649"
@@ -150,7 +149,7 @@ export function FirstFloor() {
         ></path>
         <path
           id="13"
-          fill={bookshelf === "13" ? "green" : "#502d16"}
+          fill={props.bookshelf === "13" ? "green" : "#502d16"}
           fillOpacity="0.787"
           stroke="#000"
           strokeWidth="0.649"
@@ -158,7 +157,7 @@ export function FirstFloor() {
         ></path>
         <path
           id="11"
-          fill={bookshelf === "11" ? "green" : "#502d16"}
+          fill={props.bookshelf === "11" ? "green" : "#502d16"}
           fillOpacity="0.787"
           stroke="#000"
           strokeWidth="0.633"
@@ -166,7 +165,7 @@ export function FirstFloor() {
         ></path>
         <path
           id="15"
-          fill={bookshelf === "15" ? "green" : "#502d16"}
+          fill={props.bookshelf === "15" ? "green" : "#502d16"}
           fillOpacity="0.787"
           stroke="#000"
           strokeWidth="0.633"
@@ -174,7 +173,7 @@ export function FirstFloor() {
         ></path>
         <path
           id="2a"
-          fill={bookshelf === "2a" ? "green" : "#502d16"}
+          fill={props.bookshelf === "2a" ? "green" : "#502d16"}
           fillOpacity="0.787"
           stroke="#000"
           strokeWidth="0.6"
@@ -182,7 +181,7 @@ export function FirstFloor() {
         ></path>
         <path
           id="2b"
-          fill={bookshelf === "2b" ? "green" : "#502d16"}
+          fill={props.bookshelf === "2b" ? "green" : "#502d16"}
           fillOpacity="0.787"
           stroke="#000"
           strokeWidth="0.6"
@@ -190,7 +189,7 @@ export function FirstFloor() {
         ></path>
         <path
           id="3a"
-          fill={bookshelf === "3a" ? "green" : "#502d16"}
+          fill={props.bookshelf === "3a" ? "green" : "#502d16"}
           fillOpacity="0.787"
           stroke="#000"
           strokeWidth="0.6"
@@ -198,7 +197,7 @@ export function FirstFloor() {
         ></path>
         <path
           id="6b"
-          fill={bookshelf === "6b" ? "green" : "#502d16"}
+          fill={props.bookshelf === "6b" ? "green" : "#502d16"}
           fillOpacity="0.787"
           stroke="#000"
           strokeWidth="0.6"
@@ -206,7 +205,7 @@ export function FirstFloor() {
         ></path>
         <path
           id="3b"
-          fill={bookshelf === "3b" ? "green" : "#502d16"}
+          fill={props.bookshelf === "3b" ? "green" : "#502d16"}
           fillOpacity="0.787"
           stroke="#000"
           strokeWidth="0.6"
@@ -214,7 +213,7 @@ export function FirstFloor() {
         ></path>
         <path
           id="6a"
-          fill={bookshelf === "6a" ? "green" : "#502d16"}
+          fill={props.bookshelf === "6a" ? "green" : "#502d16"}
           fillOpacity="0.787"
           stroke="#000"
           strokeWidth="0.6"
@@ -723,7 +722,7 @@ export function FirstFloor() {
         </text>
         <path
           id="4a"
-          fill={bookshelf === "4a" ? "green" : "#502d16"}
+          fill={props.bookshelf === "4a" ? "green" : "#502d16"}
           fillOpacity="0.787"
           stroke="#000"
           strokeWidth="0.6"
@@ -731,7 +730,7 @@ export function FirstFloor() {
         ></path>
         <path
           id="4b"
-          fill={bookshelf === "4b" ? "green" : "#502d16"}
+          fill={props.bookshelf === "4b" ? "green" : "#502d16"}
           fillOpacity="0.787"
           stroke="#000"
           strokeWidth="0.6"
@@ -817,7 +816,7 @@ export function FirstFloor() {
         </text>
         <path
           id="5a"
-          fill={bookshelf === "5a" ? "green" : "#502d16"}
+          fill={props.bookshelf === "5a" ? "green" : "#502d16"}
           fillOpacity="0.787"
           stroke="#000"
           strokeWidth="0.6"
@@ -825,7 +824,7 @@ export function FirstFloor() {
         ></path>
         <path
           id="5b"
-          fill={bookshelf === "5b" ? "green" : "#502d16"}
+          fill={props.bookshelf === "5b" ? "green" : "#502d16"}
           fillOpacity="0.787"
           stroke="#000"
           strokeWidth="0.6"

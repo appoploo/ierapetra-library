@@ -9,6 +9,8 @@ import useSWR from "swr";
 import Image from "next/image";
 import { Res } from "./api/books";
 import Pagination from "../components/Pagination";
+import { useT } from "../hooks/useT";
+import { Book } from "./api/book";
 
 const mapFirstLetterToCategoryIdx: Record<string, any> = {
   // English letters
@@ -118,12 +120,6 @@ const mapFirstLetterToCategoryIdx: Record<string, any> = {
 
 const fetcher = (url: string) => axios.get(url).then((r) => r.data);
 
-type Book = {
-  title: string;
-  category: string;
-  floor: string;
-  bookshelf: string;
-};
 const useBooks = (title?: string, category?: string) => {
   const router = useRouter();
 
@@ -139,6 +135,17 @@ const useBooks = (title?: string, category?: string) => {
     isError: error,
   };
 };
+
+function useBook() {
+  const router = useRouter();
+  const id = router.query.id as string;
+  const { data, error } = useSWR<Book>(id && `/api/book?id=${id}`, fetcher);
+  return {
+    data: data ?? ({} as Book),
+    isLoading: !error && !data,
+    isError: error,
+  };
+}
 
 type Category = { value: string; label: string; category: string; src: string };
 
@@ -158,14 +165,8 @@ export default function Demo() {
   const ref = useRef<HTMLInputElement>(null);
   const [total, setTotal] = useState(0);
 
-  const [selectedBook, setSelectedBook] = useState<any>({
-    title: "",
-    category: "",
-    floor: "",
-    bookshelf: "",
-  });
-
   const { data: books } = useBooks(searchTerm, category);
+  const { data: book } = useBook();
   const { data: categories } = useCategories();
 
   const getCategorySrc = (category: string) => {
@@ -174,9 +175,14 @@ export default function Demo() {
     return categories[idx]?.src;
   };
 
+  console.log(book);
+  const bookValues = book.properties?.map((p) => p.value);
+
   useEffect(() => {
     if (books.totalPages) setTotal(books.totalPages - 1 ?? 0);
   }, [books]);
+
+  const t = useT();
 
   return (
     <div className="h-screen">
@@ -199,7 +205,7 @@ export default function Demo() {
       <div className=" grid  sm:grid-col-1 md:grid-cols-[300px_2fr]">
         <ul className="h-full menu  border-r  mt-0.5  hidden md:block bg-base-100 w-72 justify-items-center  ">
           <li>
-            <Link href={"/"}>Όλες</Link>
+            <Link href={"/"}>{t("all")}</Link>
           </li>
           {categories.map((sm, idx) => (
             <li key={idx}>
@@ -218,7 +224,7 @@ export default function Demo() {
           <div className=" md:hidden  gap-x-3 flex text-sm font-bold w-screen overflow-x-auto  ">
             <Link className="w-full h-full flex  items-center" href={"/"}>
               <span className="py-3 whitespace-nowrap w-fit px-4 my-6 border text-center  rounded-lg  ">
-                Όλες
+                {t("all")}
               </span>
             </Link>
 
@@ -248,12 +254,7 @@ export default function Demo() {
                   href={{
                     query: {
                       ...router.query,
-                      title: obj.label,
-                      category: obj.type?.name,
-                      // floor: obj.floor,
-                      // bookshelf: obj.bookshelf,
-                      // floor: 1,
-                      // bookshelf: 1,
+                      id: obj.uuid,
                     },
                   }}
                   key={idx}
@@ -262,7 +263,6 @@ export default function Demo() {
                     onClick={() => {
                       if (!ref.current) return;
                       ref.current.checked = true;
-                      setSelectedBook(obj);
                     }}
                     className="card card-compact shadow w-full bg-base-100 border h-fit"
                   >
@@ -278,7 +278,7 @@ export default function Demo() {
                         {obj.label}
                       </h2>
                       <div className="font-medium xl:sticky xl:mb-8">
-                        <span className="underline">Τοποθεσία </span>
+                        <span className="underline">{t("location")} </span>
                         <br />
                         <div className="flex gap-x-2  ">
                           {/* <span>όροφος:{obj.floor}</span> */}
@@ -321,6 +321,12 @@ export default function Demo() {
             onClick={() => {
               if (!ref.current) return;
               ref.current.checked = false;
+              router.replace({
+                query: {
+                  ...router.query,
+                  id: null,
+                },
+              });
             }}
             className="btn btn-sm btn-circle absolute right-2 top-2"
           >
@@ -328,29 +334,57 @@ export default function Demo() {
           </label>
           <h3 className="font-bold flex justify-center items-center text-center border-b pb-4 mb-4 md:text-xl lg:text-lg xl:text-xl h-20   md:h-36 lg:h-20   lg:max-w-full  ">
             <span>
-              ΤΙΤΛΟΣ / TITLE : <br /> {selectedBook.title}
+              {t("title")} : <br /> {book?.label}
             </span>
           </h3>
 
           <div className=" grid lg:grid lg:grid-cols-[1fr_2fr] content-center md:h-full gap-2">
-            <ul className="lg:max-w-md h-full w-full  lg:border-r text-xs md:text-lg lg:text-sm xl:text-lg">
-              <li className="font-semibold">
-                ΧΑΡΑΚΤΗΡΙΣΤΙΚΑ / CHARACTERISTICS
+            <ul className="lg:max-w-md uppercase h-full w-full  lg:border-r text-xs md:text-lg lg:text-sm xl:text-lg">
+              <li className="font-semibold">{t("characteristics")}:</li>
+              <li>
+                <span className="text-md mr-2">{t("author")}:&nbsp; </span>
+
+                <span className="font-bold">{bookValues?.at(0)}</span>
               </li>
-              <li>ΣΥΓΓΡΑΦΕΑΣ/AUTHOR:</li>
-              <li>ΕΚΔΟΣΕΙΣ /PUBLISHER: </li> <li>ΕΤΟΣ / YEAR : </li>
-              <li>ISBN: </li> <li>ΚΑΤΗΓΟΡΙΑ / CATEGORY:</li>
-              <li className="font-semibold pt-4">ΘΕΣΗ / LOCATION</li>
-              <li>ΟΡΟΦΟΣ /FLOOR: {selectedBook.floor} </li>
-              <li>ΡΑΦΙ /SHELF: {selectedBook.bookshelf}</li>
+              <li>
+                <span className="text-md mr-2">{t("publisher")}:&nbsp; </span>
+
+                <span className="font-bold">{bookValues?.at(2)}</span>
+              </li>{" "}
+              <li>
+                <span className="text-md mr-2">{t("year")}:&nbsp; </span>
+
+                <span className="font-bold">{bookValues?.at(3)}</span>
+              </li>
+              <li>
+                ISBN:
+                <span className="font-bold">{bookValues?.at(5)}</span>
+              </li>
+              <li>
+                {t("category")}:&nbsp;
+                <span className="font-bold">{bookValues?.at(6)}</span>
+              </li>
+              <li className="font-semibold pt-4">
+                <span className="font-bold">{t("location")}</span>
+              </li>
+              <li>
+                <span className="text-md mr-2">{t("floor")}:&nbsp; </span>
+
+                <span className="font-bold">{bookValues?.at(7)} </span>
+              </li>
+              <li>
+                <span className="text-md mr-2">{t("shelf")}:&nbsp; </span>
+
+                <span className="font-bold">{bookValues?.at(8)}</span>
+              </li>
             </ul>
 
             <div className="divider lg:hidden"></div>
             <div className=" md:h-full  lg:h-[50vh] 2xl:h-[70vh] grid place-items-center w-full ">
-              {selectedBook.floor === "ground" ? (
-                <GroundFloor />
+              {Number(bookValues?.at(7)) === 0 ? (
+                <GroundFloor bookshelf={bookValues?.at(8) as string} />
               ) : (
-                <FirstFloor />
+                <FirstFloor bookshelf={bookValues?.at(8) as string} />
               )}
             </div>
           </div>
