@@ -86,7 +86,7 @@ export default async function handler(
       },
     ],
   });
-  let offset = Number(page === "undefined" ? 1 : page);
+  let offset = Number(page === "undefined" ? 0 : page);
   const url = `https://storev2-api.repox.io/public/containers/search?page=${offset}&sort=label,asc`;
 
   await fetch(url, {
