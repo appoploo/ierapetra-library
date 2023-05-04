@@ -239,6 +239,7 @@ export default function Demo() {
       <div className="flex z-50 sticky top-0 bg-white  border justify-center items-center p-2 shadow">
         <input
           type="text"
+          value={searchTerm ?? ""}
           placeholder="🔍 Search..."
           className="input  input-bordered  w-full md:w-1/3  rounded-full"
           onChange={(evt) =>
