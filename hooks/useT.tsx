@@ -11,7 +11,8 @@ type Key =
   | "floor"
   | "title"
   | "all"
-  | "shelf";
+  | "shelf"
+  | "nameofapp";
 
 const translations: Record<Locale, Record<Key, string>> = {
   en: {
@@ -25,6 +26,7 @@ const translations: Record<Locale, Record<Key, string>> = {
     location: "Location",
     floor: "Floor",
     shelf: "Shelf",
+    nameofapp: "Ierapetra Library",
   },
   el: {
     all: "Όλες",
@@ -37,6 +39,7 @@ const translations: Record<Locale, Record<Key, string>> = {
     location: "Θεση",
     floor: "Οροφος",
     shelf: "Ραφι",
+    nameofapp: "Βιβλιοθήκη Ιεράπετρας",
   },
 };
 

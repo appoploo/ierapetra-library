@@ -236,12 +236,26 @@ export default function Demo() {
 
   return (
     <div className="h-screen">
-      <div className="flex z-50 sticky top-0 bg-white  border justify-center items-center p-2 shadow">
+      <div className="flex z-50 sticky top-0 bg-white gap-4 md:items-center border  p-2 shadow">
+        <div className=" flex gap-2 md:mr-6 lg:mr-14 xl:mr-40 2xl:mr-72">
+          <picture>
+            <img
+              src="ierapetra-logo.png"
+              alt="ierapetra-logo"
+              width={60}
+              height={60}
+            />
+          </picture>
+          <h2 className=" hidden  md:block text-base  2xl:text-xl font-medium text-center p-4 ">
+            {t("nameofapp")}
+          </h2>
+        </div>
+
         <input
           type="text"
           value={searchTerm ?? ""}
           placeholder="🔍 Search..."
-          className="input  input-bordered  w-full md:w-1/3  rounded-full"
+          className="input  input-bordered  w-full md:w-1/3  rounded-full   "
           onChange={(evt) =>
             router.push({
               query: {
