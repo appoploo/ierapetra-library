@@ -5,1118 +5,435 @@ export function FirstFloor(props: { bookshelf: string }) {
 
   return (
     <svg
-      className="block w-full h-full"
-      xmlns="http://www.w3.org/2000/svg"
-      id="svg5"
+      className="block h-full w-full border-red-300"
+      viewBox="0 0 500.00001 350"
       version="1.1"
-      viewBox="0 0 608.318 340.639"
+      id="svg5"
     >
-      <g
-        id="layer1"
-        strokeDasharray="none"
-        strokeOpacity="1"
-        transform="translate(1048.961 -674.462)"
-      >
-        <path
-          id="rect234-8-2-6"
-          fill="#f2f2f2"
-          fillOpacity="1"
-          stroke="#000"
-          strokeWidth="1"
-          d="M-1048.438 674.962v338.597h222.729v1.042h161.836v-1.042h222.73V674.962z"
-        ></path>
-        <path
-          id="rect6342-1"
-          fill="#e3e2db"
-          fillOpacity="1"
-          stroke="#020101"
-          strokeWidth="0.452"
-          d="M882.404 553.664H1013.146V664.1469999999999H882.404z"
-          transform="rotate(90)"
-        ></path>
-        <path
-          id="rect6604-6"
-          fill="#e3e2db"
-          fillOpacity="1"
-          stroke="none"
-          strokeWidth="0.204"
-          d="M882.147 631.907H909.543V654.0300000000001H882.147z"
-          transform="rotate(90)"
-        ></path>
-        <path
-          id="rect6342-1-1"
-          fill="#e3e2db"
-          fillOpacity="1"
-          stroke="#020101"
-          strokeWidth="0.455"
-          d="M882.406 441.389H1013.145V553.481H882.406z"
-          transform="rotate(90)"
-        ></path>
-        <path
-          id="rect6604-6-3"
-          fill="#e3e2db"
-          fillOpacity="1"
-          stroke="none"
-          strokeWidth="0.206"
-          d="M882.149 519.278H909.545V541.724H882.149z"
-          transform="rotate(90)"
-        ></path>
-        <path
-          id="rect6342-13"
-          fill="#e3e2db"
-          fillOpacity="1"
-          stroke="#020101"
-          strokeWidth="1.032"
-          d="M826.007 -1013.584H1048.445V-675.006H826.007z"
-          transform="scale(-1)"
-        ></path>
-        <path
-          id="rect6604-3"
-          fill="#e3e2db"
-          fillOpacity="1"
-          stroke="none"
-          strokeWidth="1.022"
-          d="M-872.18 681.375H-825.569V1007.105H-872.18z"
-        ></path>
-        <path
-          id="1"
-          fill={props.bookshelf === "1" ? "green" : "#502d16"}
-          fillOpacity="0.787"
-          stroke="#000"
-          strokeWidth="0.681"
-          d="M-1046.955 872.479H-1040.625V1004.258H-1046.955z"
-        ></path>
-        <path
-          id="8"
-          fill={props.bookshelf === "8" ? "green" : "#502d16"}
-          fillOpacity="0.787"
-          stroke="#000"
-          strokeWidth="0.884"
-          d="M-1011.634 -1041.421H-1005.508V-811.825H-1011.634z"
-          transform="rotate(-90)"
-        ></path>
-        <path
-          id="7"
-          fill={props.bookshelf === "7" ? "green" : "#502d16"}
-          fillOpacity="0.787"
-          stroke="#000"
-          strokeWidth="0.691"
-          d="M-1011.731 -811.21H-1005.412V-675.288H-1011.731z"
-          transform="rotate(-90)"
-        ></path>
-        <path
-          id="14"
-          fill={props.bookshelf === "14" ? "green" : "#502d16"}
-          fillOpacity="0.787"
-          stroke="#000"
-          strokeWidth="0.58"
-          d="M-1011.786 -544.466H-1005.356V-450.343H-1011.786z"
-          transform="rotate(-90)"
-        ></path>
-        <path
-          id="16"
-          fill={props.bookshelf === "16" ? "green" : "#502d16"}
-          fillOpacity="0.787"
-          stroke="#000"
-          strokeWidth="0.494"
-          d="M-890.676 -518.221H-884.159V-450.881H-890.676z"
-          transform="rotate(-90)"
-        ></path>
-        <path
-          id="12"
-          fill={props.bookshelf === "12" ? "green" : "#502d16"}
-          fillOpacity="0.787"
-          stroke="#000"
-          strokeWidth="0.494"
-          d="M-890.676 -630.569H-884.159V-563.2289999999999H-890.676z"
-          transform="rotate(-90)"
-        ></path>
-        <path
-          id="9"
-          fill={props.bookshelf === "9" ? "green" : "#502d16"}
-          fillOpacity="0.787"
-          stroke="#000"
-          strokeWidth="0.651"
-          d="M-672.211 884.789H-665.864V1004.975H-672.211z"
-        ></path>
-        <path
-          id="10"
-          fill={props.bookshelf === "10" ? "green" : "#502d16"}
-          fillOpacity="0.787"
-          stroke="#000"
-          strokeWidth="0.649"
-          d="M-662.299 884.45H-655.951V1004.0500000000001H-662.299z"
-        ></path>
-        <path
-          id="13"
-          fill={props.bookshelf === "13" ? "green" : "#502d16"}
-          fillOpacity="0.787"
-          stroke="#000"
-          strokeWidth="0.649"
-          d="M-551.858 884.936H-545.51V1004.5360000000001H-551.858z"
-        ></path>
-        <path
-          id="11"
-          fill={props.bookshelf === "11" ? "green" : "#502d16"}
-          fillOpacity="0.787"
-          stroke="#000"
-          strokeWidth="0.633"
-          d="M-561.972 891.019H-555.6229999999999V1004.545H-561.972z"
-        ></path>
-        <path
-          id="15"
-          fill={props.bookshelf === "15" ? "green" : "#502d16"}
-          fillOpacity="0.787"
-          stroke="#000"
-          strokeWidth="0.633"
-          d="M-449.535 891.019H-443.18600000000004V1004.545H-449.535z"
-        ></path>
-        <path
-          id="2a"
-          fill={props.bookshelf === "2a" ? "green" : "#502d16"}
-          fillOpacity="0.787"
-          stroke="#000"
-          strokeWidth="0.6"
-          d="M-1002.409 874.555H-995.998V975.5089999999999H-1002.409z"
-        ></path>
-        <path
-          id="2b"
-          fill={props.bookshelf === "2b" ? "green" : "#502d16"}
-          fillOpacity="0.787"
-          stroke="#000"
-          strokeWidth="0.6"
-          d="M-995.195 874.555H-988.7840000000001V975.5089999999999H-995.195z"
-        ></path>
-        <path
-          id="3a"
-          fill={props.bookshelf === "3a" ? "green" : "#502d16"}
-          fillOpacity="0.787"
-          stroke="#000"
-          strokeWidth="0.6"
-          d="M-970.824 874.555H-964.413V975.5089999999999H-970.824z"
-        ></path>
-        <path
-          id="6b"
-          fill={props.bookshelf === "6b" ? "green" : "#502d16"}
-          fillOpacity="0.787"
-          stroke="#000"
-          strokeWidth="0.6"
-          d="M-868.612 874.555H-862.201V975.5089999999999H-868.612z"
-        ></path>
-        <path
-          id="3b"
-          fill={props.bookshelf === "3b" ? "green" : "#502d16"}
-          fillOpacity="0.787"
-          stroke="#000"
-          strokeWidth="0.6"
-          d="M-963.61 874.555H-957.1990000000001V975.5089999999999H-963.61z"
-        ></path>
-        <path
-          id="6a"
-          fill={props.bookshelf === "6a" ? "green" : "#502d16"}
-          fillOpacity="0.787"
-          stroke="#000"
-          strokeWidth="0.6"
-          d="M-875.826 874.555H-869.4150000000001V975.5089999999999H-875.826z"
-        ></path>
-        <text
-          xmlSpace="preserve"
+      <defs id="defs2" />
+      <g id="layer1" transform="translate(1027.0437,-685.5076)">
+        <rect
           style={{
-            lineHeight: "1.1",
-
-            textAlign: "center",
+            fill: props.bookshelf === "1" ? "green" : "#ffe6d5",
+            stroke: "#030303",
+            strokeWidth: "0.3",
+            strokeDasharray: "none",
+            strokeOpacity: "0.96271187",
           }}
-          id="text5120-6-0-8-0"
-          x="-1039.041"
-          y="959.328"
-          fill="#333"
-          fillOpacity="0.787"
-          stroke="none"
-          strokeWidth="0"
-          fontFamily="STIX Two Text"
-          fontSize="3.357"
-          fontStyle="italic"
-          letterSpacing="0.214"
-          textAnchor="middle"
-        >
-          <tspan
-            id="tspan5118-6-8-9-0"
-            style={{}}
-            x="-1038.934"
-            y="959.328"
-            fill="#333"
-            stroke="none"
-            strokeDasharray="none"
-            strokeWidth="0"
-            fontFamily="Arial"
-            fontSize="3.357"
-            fontStretch="condensed"
-            fontStyle="normal"
-            fontVariant="normal"
-            fontWeight="normal"
-          >
-            1
-          </tspan>
-        </text>
-        <text
-          xmlSpace="preserve"
+          id={"1"}
+          width="29.825922"
+          height="178.17877"
+          x="-1026.3759"
+          y="788.97766"
+        />
+        <rect
           style={{
-            lineHeight: "1.1",
-
-            textAlign: "center",
+            fill: props.bookshelf === "2" ? "green" : "#ffe6d5",
+            stroke: "#030303",
+            strokeWidth: "0.3",
+            strokeDasharray: "none",
+            strokeOpacity: "0.96271187",
           }}
-          id="text5120-6-0-8-0-8"
-          x="-984.847"
-          y="1003.83"
-          fill="#333"
-          fillOpacity="0.787"
-          stroke="none"
-          strokeWidth="0"
-          fontFamily="STIX Two Text"
-          fontSize="3.357"
-          fontStyle="italic"
-          letterSpacing="0.214"
-          textAnchor="middle"
-        >
-          <tspan
-            id="tspan5118-6-8-9-0-6"
-            style={{}}
-            x="-984.74"
-            y="1003.83"
-            fill="#333"
-            stroke="none"
-            strokeDasharray="none"
-            strokeWidth="0"
-            fontFamily="Arial"
-            fontSize="3.357"
-            fontStretch="condensed"
-            fontStyle="normal"
-            fontVariant="normal"
-            fontWeight="normal"
-          >
-            8
-          </tspan>
-        </text>
-        <text
-          xmlSpace="preserve"
+          id={"2"}
+          width="29.824991"
+          height="37.636257"
+          x="-1026.3759"
+          y="751.30499"
+        />
+        <rect
           style={{
-            lineHeight: "1.1",
-
-            textAlign: "center",
-            whiteSpace: "pre",
-            inlineSize: "5.60467",
+            fill: props.bookshelf === "3" ? "green" : "#ffe6d5",
+            stroke: "#030303",
+            strokeWidth: "0.3",
+            strokeDasharray: "none",
+            strokeOpacity: "0.96271187",
           }}
-          id="text5120-6-0-8-0-8-5"
-          x="-753.777"
-          y="1044.806"
-          fill="#333"
-          fillOpacity="0.787"
-          stroke="none"
-          strokeWidth="0"
-          display="inline"
-          fontFamily="STIX Two Text"
-          fontSize="3.357"
-          fontStyle="italic"
-          letterSpacing="0.214"
-          textAnchor="middle"
-          transform="translate(27.106 -40.976)"
-        >
-          <tspan id="tspan441" x="-753.777" y="1044.806">
-            <tspan
-              style={{}}
-              id="tspan439"
-              fontFamily="Arial"
-              fontStretch="condensed"
-              fontStyle="normal"
-            >
-              7
-            </tspan>
-          </tspan>
-        </text>
-        <text
-          xmlSpace="preserve"
+          id={"3"}
+          width="29.824991"
+          height="37.636257"
+          x="-1026.3759"
+          y="713.56848"
+        />
+        <rect
           style={{
-            lineHeight: "1.1",
-
-            textAlign: "center",
+            fill: props.bookshelf === "24" ? "green" : "#ffe6d5",
+            stroke: "#030303",
+            strokeWidth: "0.3",
+            strokeDasharray: "none",
+            strokeOpacity: "0.962712",
           }}
-          id="text5120-6-0-8-0-8-5-3"
-          x="-674.396"
-          y="952.843"
-          fill="#333"
-          fillOpacity="0.787"
-          stroke="none"
-          strokeWidth="0"
-          fontFamily="STIX Two Text"
-          fontSize="3.357"
-          fontStyle="italic"
-          letterSpacing="0.214"
-          textAnchor="middle"
-        >
-          <tspan
-            id="tspan5118-6-8-9-0-6-3-7"
-            style={{}}
-            x="-674.289"
-            y="952.843"
-            fill="#333"
-            stroke="none"
-            strokeDasharray="none"
-            strokeWidth="0"
-            fontFamily="Arial"
-            fontSize="3.357"
-            fontStretch="condensed"
-            fontStyle="normal"
-            fontVariant="normal"
-            fontWeight="normal"
-          >
-            9
-          </tspan>
-        </text>
-        <text
-          xmlSpace="preserve"
+          id={"24"}
+          width="29.862722"
+          height="71.080032"
+          x="-557.60345"
+          y="964.79614"
+        />
+        <rect
           style={{
-            lineHeight: "1.1",
-
-            textAlign: "center",
-            whiteSpace: "pre",
-            inlineSize: "5.60467",
+            fill: props.bookshelf === "25" ? "green" : "#ffe6d5",
+            stroke: "#030303",
+            strokeWidth: "0.3",
+            strokeDasharray: "none",
+            strokeOpacity: "0.962712",
           }}
-          id="text5120-6-0-8-0-8-5-1"
-          x="-753.777"
-          y="1044.806"
-          fill="#333"
-          fillOpacity="0.787"
-          stroke="none"
-          strokeWidth="0"
-          display="inline"
-          fontFamily="STIX Two Text"
-          fontSize="3.357"
-          fontStyle="italic"
-          letterSpacing="0.214"
-          textAnchor="middle"
-          transform="translate(101.026 -86.219)"
-        >
-          <tspan id="tspan445" x="-753.777" y="1044.806">
-            <tspan
-              style={{}}
-              id="tspan443"
-              fontFamily="Arial"
-              fontStretch="condensed"
-              fontStyle="normal"
-            >
-              10
-            </tspan>
-          </tspan>
-        </text>
-        <text
-          xmlSpace="preserve"
+          id={"25"}
+          width="29.871059"
+          height="53.545837"
+          x="-557.60767"
+          y="911.164"
+        />
+        <rect
           style={{
-            lineHeight: "1.1",
-
-            textAlign: "center",
+            fill: props.bookshelf === "29" ? "green" : "#ffe6d5",
+            stroke: "#030303",
+            strokeWidth: "0.3",
+            strokeDasharray: "none",
+            strokeOpacity: "0.962712",
           }}
-          id="text5120-6-0-8-0-8-5-3-2"
-          x="-566.38"
-          y="957.95"
-          fill="#333"
-          fillOpacity="0.787"
-          stroke="none"
-          strokeWidth="0"
-          fontFamily="STIX Two Text"
-          fontSize="3.357"
-          fontStyle="italic"
-          letterSpacing="0.214"
-          textAnchor="middle"
-        >
-          <tspan
-            id="tspan5118-6-8-9-0-6-3-7-9"
-            style={{}}
-            x="-566.273"
-            y="957.95"
-            fill="#333"
-            stroke="none"
-            strokeDasharray="none"
-            strokeWidth="0"
-            fontFamily="Arial"
-            fontSize="3.357"
-            fontStretch="condensed"
-            fontStyle="normal"
-            fontVariant="normal"
-            fontWeight="normal"
-          >
-            11
-          </tspan>
-        </text>
-        <text
-          xmlSpace="preserve"
+          id={"29"}
+          width="29.867338"
+          height="61.068199"
+          x="-557.60577"
+          y="754.45087"
+        />
+        <rect
           style={{
-            lineHeight: "1.1",
-
-            textAlign: "center",
+            fill: props.bookshelf === "30" ? "green" : "#ffe6d5",
+            stroke: "#030303",
+            strokeWidth: "0.3",
+            strokeDasharray: "none",
+            strokeOpacity: "0.962712",
           }}
-          id="text5120-6-0-8-0-8-5-3-2-9"
-          x="-542.06"
-          y="963.602"
-          fill="#333"
-          fillOpacity="0.787"
-          stroke="none"
-          strokeWidth="0"
-          fontFamily="STIX Two Text"
-          fontSize="3.357"
-          fontStyle="italic"
-          letterSpacing="0.214"
-          textAnchor="middle"
-        >
-          <tspan
-            id="tspan5118-6-8-9-0-6-3-7-9-5"
-            style={{}}
-            x="-541.953"
-            y="963.602"
-            fill="#333"
-            stroke="none"
-            strokeDasharray="none"
-            strokeWidth="0"
-            fontFamily="Arial"
-            fontSize="3.357"
-            fontStretch="condensed"
-            fontStyle="normal"
-            fontVariant="normal"
-            fontWeight="normal"
-          >
-            13
-          </tspan>
-        </text>
-        <text
-          xmlSpace="preserve"
+          id={"30"}
+          width="29.877449"
+          height="41.791016"
+          x="-557.61084"
+          y="712.67407"
+        />
+        <rect
           style={{
-            lineHeight: "1.1",
-
-            textAlign: "center",
+            fill: props.bookshelf === "26" ? "green" : "#ffe6d5",
+            stroke: "#030303",
+            strokeWidth: "0.3",
+            strokeDasharray: "none",
+            strokeOpacity: "0.962712",
           }}
-          id="text5120-3-6-7-9"
-          x="-999.347"
-          y="979.966"
-          fill="#333"
-          fillOpacity="0.787"
-          stroke="none"
-          strokeWidth="0"
-          fontFamily="STIX Two Text"
-          fontSize="3.357"
-          fontStyle="italic"
-          letterSpacing="0.214"
-          textAnchor="middle"
-        >
-          <tspan
-            id="tspan5118-9-4-5-4"
-            style={{}}
-            x="-999.24"
-            y="979.966"
-            fill="#333"
-            stroke="none"
-            strokeDasharray="none"
-            strokeWidth="0"
-            fontFamily="Arial"
-            fontSize="3.357"
-            fontStretch="condensed"
-            fontStyle="normal"
-            fontVariant="normal"
-            fontWeight="normal"
-          >
-            2α
-          </tspan>
-        </text>
-        <text
-          xmlSpace="preserve"
+          id={"26"}
+          width="29.833399"
+          height="31.564741"
+          x="-557.58929"
+          y="879.6524"
+        />
+        <rect
           style={{
-            lineHeight: "1.1",
-
-            textAlign: "center",
+            fill: props.bookshelf === "27" ? "green" : "#ffe6d5",
+            stroke: "#030303",
+            strokeWidth: "0.3",
+            strokeDasharray: "none",
+            strokeOpacity: "0.962712",
           }}
-          id="text5120-6-2-8-5-6"
-          x="-992.127"
-          y="979.966"
-          fill="#333"
-          fillOpacity="0.787"
-          stroke="none"
-          strokeWidth="0"
-          fontFamily="STIX Two Text"
-          fontSize="3.357"
-          fontStyle="italic"
-          letterSpacing="0.214"
-          textAnchor="middle"
-        >
-          <tspan
-            id="tspan5118-6-5-3-0-0"
-            style={{}}
-            x="-992.02"
-            y="979.966"
-            fill="#333"
-            stroke="none"
-            strokeDasharray="none"
-            strokeWidth="0"
-            fontFamily="Arial"
-            fontSize="3.357"
-            fontStretch="condensed"
-            fontStyle="normal"
-            fontVariant="normal"
-            fontWeight="normal"
-          >
-            2β
-          </tspan>
-        </text>
-        <text
-          xmlSpace="preserve"
+          id={"27"}
+          width="29.834135"
+          height="31.058817"
+          x="-557.58966"
+          y="848.56805"
+        />
+        <rect
           style={{
-            lineHeight: "1.1",
-
-            textAlign: "center",
+            fill: props.bookshelf === "28" ? "green" : "#ffe6d5",
+            stroke: "#030303",
+            strokeWidth: "0.3",
+            strokeDasharray: "none",
+            strokeOpacity: "0.962712",
           }}
-          id="text5120-4-7-6-7"
-          x="-967.738"
-          y="979.966"
-          fill="#333"
-          fillOpacity="0.787"
-          stroke="none"
-          strokeWidth="0"
-          fontFamily="STIX Two Text"
-          fontSize="3.357"
-          fontStyle="italic"
-          letterSpacing="0.214"
-          textAnchor="middle"
-        >
-          <tspan
-            id="tspan5118-8-4-9-6"
-            style={{}}
-            x="-967.631"
-            y="979.966"
-            fill="#333"
-            stroke="none"
-            strokeDasharray="none"
-            strokeWidth="0"
-            fontFamily="Arial"
-            fontSize="3.357"
-            fontStretch="condensed"
-            fontStyle="normal"
-            fontVariant="normal"
-            fontWeight="normal"
-          >
-            3α
-          </tspan>
-        </text>
-        <text
-          xmlSpace="preserve"
-          style={{
-            lineHeight: "1.1",
-
-            textAlign: "center",
-          }}
-          id="text5120-6-8-3-1-6"
-          x="-960.519"
-          y="979.966"
-          fill="#333"
-          fillOpacity="0.787"
-          stroke="none"
-          strokeWidth="0"
-          fontFamily="STIX Two Text"
-          fontSize="3.357"
-          fontStyle="italic"
-          letterSpacing="0.214"
-          textAnchor="middle"
-        >
-          <tspan
-            id="tspan5118-6-4-5-1-0"
-            style={{}}
-            x="-960.412"
-            y="979.966"
-            fill="#333"
-            stroke="none"
-            strokeDasharray="none"
-            strokeWidth="0"
-            fontFamily="Arial"
-            fontSize="3.357"
-            fontStretch="condensed"
-            fontStyle="normal"
-            fontVariant="normal"
-            fontWeight="normal"
-          >
-            3β
-          </tspan>
-        </text>
-        <text
-          xmlSpace="preserve"
-          style={{
-            lineHeight: "1.1",
-
-            textAlign: "center",
-          }}
-          id="text5120-49-9-7-6"
-          x="-872.67"
-          y="979.966"
-          fill="#333"
-          fillOpacity="0.787"
-          stroke="none"
-          strokeWidth="0"
-          fontFamily="STIX Two Text"
-          fontSize="3.357"
-          fontStyle="italic"
-          letterSpacing="0.214"
-          textAnchor="middle"
-        >
-          <tspan
-            id="tspan5118-0-7-4-4"
-            style={{}}
-            x="-872.563"
-            y="979.966"
-            fill="#333"
-            stroke="none"
-            strokeDasharray="none"
-            strokeWidth="0"
-            fontFamily="Arial"
-            fontSize="3.357"
-            fontStretch="condensed"
-            fontStyle="normal"
-            fontVariant="normal"
-            fontWeight="normal"
-          >
-            6α
-          </tspan>
-        </text>
-        <text
-          xmlSpace="preserve"
-          style={{
-            lineHeight: "1.1",
-
-            textAlign: "center",
-          }}
-          id="text5120-6-4-4-0-4"
-          x="-865.451"
-          y="979.966"
-          fill="#333"
-          fillOpacity="0.787"
-          stroke="none"
-          strokeWidth="0"
-          fontFamily="STIX Two Text"
-          fontSize="3.357"
-          fontStyle="italic"
-          letterSpacing="0.214"
-          textAnchor="middle"
-        >
-          <tspan
-            id="tspan5118-6-9-4-0-2"
-            style={{}}
-            x="-865.344"
-            y="979.966"
-            fill="#333"
-            stroke="none"
-            strokeDasharray="none"
-            strokeWidth="0"
-            fontFamily="Arial"
-            fontSize="3.357"
-            fontStretch="condensed"
-            fontStyle="normal"
-            fontVariant="normal"
-            fontWeight="normal"
-          >
-            6β
-          </tspan>
-        </text>
+          id={"28"}
+          width="29.831226"
+          height="33.08255"
+          x="-557.5882"
+          y="815.4975"
+        />
         <path
-          id="4a"
-          fill={props.bookshelf === "4a" ? "green" : "#502d16"}
-          fillOpacity="0.787"
-          stroke="#000"
-          strokeWidth="0.6"
-          d="M-939.192 873.322H-932.7810000000001V974.276H-939.192z"
-        ></path>
+          id={"4"}
+          style={{
+            fill: props.bookshelf === "4" ? "green" : "#ffe6d5",
+            stroke: "#030303",
+            strokeWidth: "0.3",
+            strokeDasharray: "none",
+            strokeOpacity: "0.962712",
+          }}
+          d="M -970.88485 750.85297 L -970.88485 967.05114 L -941.17246 967.05114 L -941.16522 967.05114 L -911.45282 967.05114 L -911.45282 750.85297 L -941.16522 750.85297 L -941.17246 750.85297 L -970.88485 750.85297 z M -890.23965 829.71482 L -890.23965 967.08421 L -860.54844 967.08421 L -860.54844 829.71482 L -890.23965 829.71482 z "
+        />
         <path
-          id="4b"
-          fill={props.bookshelf === "4b" ? "green" : "#502d16"}
-          fillOpacity="0.787"
-          stroke="#000"
-          strokeWidth="0.6"
-          d="M-931.978 873.322H-925.567V974.276H-931.978z"
-        ></path>
-        <text
-          xmlSpace="preserve"
+          id={"12"}
           style={{
-            lineHeight: "1.1",
-
-            textAlign: "center",
+            fill: props.bookshelf === "12" ? "green" : "#ffe6d5",
+            stroke: "#030303",
+            strokeWidth: "0.3",
+            strokeDasharray: "none",
+            strokeOpacity: "0.962712",
           }}
-          id="text5120-4-7-6-2-6"
-          x="-936.083"
-          y="979.343"
-          fill="#333"
-          fillOpacity="0.787"
-          stroke="none"
-          strokeWidth="0"
-          fontFamily="STIX Two Text"
-          fontSize="3.357"
-          fontStyle="italic"
-          letterSpacing="0.214"
-          textAnchor="middle"
-        >
-          <tspan
-            id="tspan5118-8-4-9-9-5"
-            style={{}}
-            x="-935.976"
-            y="979.343"
-            fill="#333"
-            stroke="none"
-            strokeDasharray="none"
-            strokeWidth="0"
-            fontFamily="Arial"
-            fontSize="3.357"
-            fontStretch="condensed"
-            fontStyle="normal"
-            fontVariant="normal"
-            fontWeight="normal"
-          >
-            4α
-          </tspan>
-        </text>
-        <text
-          xmlSpace="preserve"
+          d="M -804.75598 750.85297 L -804.75598 967.05114 L -775.04358 967.05114 L -775.03634 967.05114 L -745.32394 967.05114 L -745.32394 750.85297 L -775.03634 750.85297 L -775.04358 750.85297 L -804.75598 750.85297 z M -721.02259 860.19771 L -721.02259 967.06612 L -691.2735 967.06612 L -691.2735 860.19771 L -721.02259 860.19771 z "
+        />
+        <rect
           style={{
-            lineHeight: "1.1",
-
-            textAlign: "center",
+            fill: props.bookshelf === "13" ? "green" : "#ffe6d5",
+            stroke: "#030303",
+            strokeWidth: "0.3",
+            strokeDasharray: "none",
+            strokeOpacity: "0.962712",
           }}
-          id="text5120-6-8-3-1-5-7"
-          x="-928.864"
-          y="979.343"
-          fill="#333"
-          fillOpacity="0.787"
-          stroke="none"
-          strokeWidth="0"
-          fontFamily="STIX Two Text"
-          fontSize="3.357"
-          fontStyle="italic"
-          letterSpacing="0.214"
-          textAnchor="middle"
-        >
-          <tspan
-            id="tspan5118-6-4-5-1-8-8"
-            style={{}}
-            x="-928.757"
-            y="979.343"
-            fill="#333"
-            stroke="none"
-            strokeDasharray="none"
-            strokeWidth="0"
-            fontFamily="Arial"
-            fontSize="3.357"
-            fontStretch="condensed"
-            fontStyle="normal"
-            fontVariant="normal"
-            fontWeight="normal"
-          >
-            4β
-          </tspan>
-        </text>
+          id={"13"}
+          width="29.748131"
+          height="109.46461"
+          x="-721.02228"
+          y="750.7934"
+        />
+        <rect
+          style={{
+            fill: props.bookshelf === "14" ? "green" : "#ffe6d5",
+            stroke: "#030303",
+            strokeWidth: "0.3",
+            strokeDasharray: "none",
+            strokeOpacity: "0.962712",
+          }}
+          id={"14"}
+          width="29.719322"
+          height="216.19817"
+          x="-691.29553"
+          y="750.85284"
+        />
         <path
-          id="5a"
-          fill={props.bookshelf === "5a" ? "green" : "#502d16"}
-          fillOpacity="0.787"
-          stroke="#000"
-          strokeWidth="0.6"
-          d="M-907.704 873.322H-901.293V974.276H-907.704z"
-        ></path>
+          id={"6"}
+          style={{
+            fill: props.bookshelf === "6" ? "green" : "#ffe6d5",
+            stroke: "#030303",
+            strokeWidth: "0.3",
+            strokeDasharray: "none",
+            strokeOpacity: "0.962712",
+          }}
+          d="M -890.25102 750.73928 L -890.25102 788.39124 L -890.23965 788.39124 L -890.23965 829.7143 L -860.41821 829.7143 L -860.41821 788.32355 L -869.1877 788.32355 L -869.1877 750.73928 L -890.25102 750.73928 z "
+        />
+        <rect
+          style={{
+            fill: props.bookshelf === "5" ? "green" : "#ffe6d5",
+            stroke: "#030303",
+            strokeWidth: "0.3",
+            strokeDasharray: "none",
+            strokeOpacity: "0.962712",
+          }}
+          id={"5"}
+          width="17.52425"
+          height="37.65958"
+          x="-869.16577"
+          y="750.7356"
+        />
+        <rect
+          style={{
+            fill: props.bookshelf === "11" ? "green" : "#ffe6d5",
+            stroke: "#030303",
+            strokeWidth: "0.3",
+            strokeDasharray: "none",
+            strokeOpacity: "0.962712",
+          }}
+          id={"11"}
+          width="21.063494"
+          height="37.652203"
+          x="-851.6557"
+          y="750.7392"
+        />
+        <rect
+          style={{
+            fill: props.bookshelf === "10" ? "green" : "#ffe6d5",
+            stroke: "#030303",
+            strokeWidth: "0.3",
+            strokeDasharray: "none",
+            strokeOpacity: "0.962712",
+          }}
+          id={"10"}
+          width="29.835344"
+          height="30.567228"
+          x="-860.43219"
+          y="788.31641"
+        />
+        <rect
+          style={{
+            fill: props.bookshelf === "9" ? "green" : "#ffe6d5",
+            stroke: "#030303",
+            strokeWidth: "0.3",
+            strokeDasharray: "none",
+            strokeOpacity: "0.962712",
+          }}
+          id={"9"}
+          width="29.827999"
+          height="36.023396"
+          x="-860.42853"
+          y="818.92023"
+        />
+        <rect
+          style={{
+            fill: props.bookshelf === "8" ? "green" : "#ffe6d5",
+            stroke: "#030303",
+            strokeWidth: "0.3",
+            strokeDasharray: "none",
+            strokeOpacity: "0.962712",
+          }}
+          id={"8"}
+          width="29.807093"
+          height="54.014847"
+          x="-860.41809"
+          y="854.99768"
+        />
+        <rect
+          style={{
+            fill: props.bookshelf === "7" ? "green" : "#ffe6d5",
+            stroke: "#030303",
+            strokeWidth: "0.3",
+            strokeDasharray: "none",
+            strokeOpacity: "0.962712",
+          }}
+          id={"7"}
+          width="29.802866"
+          height="58.091999"
+          x="-860.41589"
+          y="909.04791"
+        />
+        <rect
+          style={{
+            fill: props.bookshelf === "31" ? "green" : "#ffe6d5",
+            stroke: "#030303",
+            strokeWidth: "0.3",
+            strokeDasharray: "none",
+            strokeOpacity: "0.962712",
+          }}
+          id={"31"}
+          width="438.26941"
+          height="28.194864"
+          x="-996.32416"
+          y="685.04828"
+        />
+        <rect
+          style={{
+            fill: props.bookshelf === "19" ? "green" : "#ffe6d5",
+            stroke: "#030303",
+            strokeWidth: "0.3",
+            strokeDasharray: "none",
+            strokeOpacity: "0.962712",
+          }}
+          id={"19"}
+          width="29.820831"
+          height="44.166237"
+          x="-643.42554"
+          y="750.85699"
+        />
+        <rect
+          style={{
+            fill: props.bookshelf === "23" ? "green" : "#ffe6d5",
+            stroke: "#030303",
+            strokeWidth: "0.3",
+            strokeDasharray: "none",
+            strokeOpacity: "0.962712",
+          }}
+          id={"23"}
+          width="29.820831"
+          height="44.166237"
+          x="-613.61169"
+          y="750.85699"
+        />
+        <rect
+          style={{
+            fill: props.bookshelf === "18" ? "green" : "#ffe6d5",
+            stroke: "#030303",
+            strokeWidth: "0.3",
+            strokeDasharray: "none",
+            strokeOpacity: "0.962712",
+          }}
+          id={"18"}
+          width="29.822054"
+          height="42.190327"
+          x="-643.42676"
+          y="795.03754"
+        />
+        <rect
+          style={{
+            fill: props.bookshelf === "22" ? "green" : "#ffe6d5",
+            stroke: "#030303",
+            strokeWidth: "0.3",
+            strokeDasharray: "none",
+            strokeOpacity: "0.962712",
+          }}
+          id={"22"}
+          width="29.822054"
+          height="42.190327"
+          x="-613.61169"
+          y="795.03754"
+        />
+        <rect
+          style={{
+            fill: props.bookshelf === "17" ? "green" : "#ffe6d5",
+            stroke: "#030303",
+            strokeWidth: "0.3",
+            strokeDasharray: "none",
+            strokeOpacity: "0.962712",
+          }}
+          id={"17"}
+          width="29.821424"
+          height="43.202389"
+          x="-643.42615"
+          y="837.23114"
+        />
+        <rect
+          style={{
+            fill: props.bookshelf === "21" ? "green" : "#ffe6d5",
+            stroke: "#030303",
+            strokeWidth: "0.3",
+            strokeDasharray: "none",
+            strokeOpacity: "0.962712",
+          }}
+          id={"21"}
+          width="29.821424"
+          height="43.202389"
+          x="-613.61169"
+          y="837.23114"
+        />
+        <rect
+          style={{
+            fill: props.bookshelf === "16" ? "green" : "#ffe6d5",
+            stroke: "#030303",
+            strokeWidth: "0.3",
+            strokeDasharray: "none",
+            strokeOpacity: "0.962712",
+          }}
+          id={"16"}
+          width="29.822174"
+          height="42.000568"
+          x="-643.42688"
+          y="880.56958"
+        />
         <path
-          id="5b"
-          fill={props.bookshelf === "5b" ? "green" : "#502d16"}
-          fillOpacity="0.787"
-          stroke="#000"
-          strokeWidth="0.6"
-          d="M-900.49 873.322H-894.0790000000001V974.276H-900.49z"
-        ></path>
-        <text
-          xmlSpace="preserve"
+          id={"20"}
           style={{
-            lineHeight: "1.1",
-
-            textAlign: "center",
+            fill: props.bookshelf === "20" ? "green" : "#ffe6d5",
+            stroke: "#030303",
+            strokeWidth: "0.3",
+            strokeDasharray: "none",
+            strokeOpacity: "0.962712",
           }}
-          id="text5120-4-7-6-2-4-3"
-          x="-904.572"
-          y="979.343"
-          fill="#333"
-          fillOpacity="0.787"
-          stroke="none"
-          strokeWidth="0"
-          fontFamily="STIX Two Text"
-          fontSize="3.357"
-          fontStyle="italic"
-          letterSpacing="0.214"
-          textAnchor="middle"
-        >
-          <tspan
-            id="tspan5118-8-4-9-9-9-1"
-            style={{}}
-            x="-904.465"
-            y="979.343"
-            fill="#333"
-            stroke="none"
-            strokeDasharray="none"
-            strokeWidth="0"
-            fontFamily="Arial"
-            fontSize="3.357"
-            fontStretch="condensed"
-            fontStyle="normal"
-            fontVariant="normal"
-            fontWeight="normal"
-          >
-            5α
-          </tspan>
-        </text>
-        <text
-          xmlSpace="preserve"
+          d="M -613.61157 880.5696 L -613.61157 922.57013 L -583.78962 922.57013 L -583.78962 880.5696 L -613.61157 880.5696 z M -613.61157 922.61199 L -613.61157 967.04649 L -583.79117 967.04649 L -583.79117 922.61199 L -613.61157 922.61199 z "
+        />
+        <rect
           style={{
-            lineHeight: "1.1",
-
-            textAlign: "center",
+            fill: props.bookshelf === "15" ? "green" : "#ffe6d5",
+            stroke: "#030303",
+            strokeWidth: "0.3",
+            strokeDasharray: "none",
+            strokeOpacity: "0.962712",
           }}
-          id="text5120-6-8-3-1-5-0-8"
-          x="-897.352"
-          y="979.343"
-          fill="#333"
-          fillOpacity="0.787"
-          stroke="none"
-          strokeWidth="0"
-          fontFamily="STIX Two Text"
-          fontSize="3.357"
-          fontStyle="italic"
-          letterSpacing="0.214"
-          textAnchor="middle"
-        >
-          <tspan
-            id="tspan5118-6-4-5-1-8-4-2"
-            style={{}}
-            x="-897.245"
-            y="979.343"
-            fill="#333"
-            stroke="none"
-            strokeDasharray="none"
-            strokeWidth="0"
-            fontFamily="Arial"
-            fontSize="3.357"
-            fontStretch="condensed"
-            fontStyle="normal"
-            fontVariant="normal"
-            fontWeight="normal"
-          >
-            5β
-          </tspan>
-        </text>
-        <text
-          xmlSpace="preserve"
-          style={{
-            lineHeight: "1.1",
-
-            textAlign: "center",
-          }}
-          id="text5120-6-0-8-0-8-5-3-2-6"
-          x="-622.113"
-          y="894.615"
-          fill="#333"
-          fillOpacity="0.787"
-          stroke="none"
-          strokeWidth="0"
-          fontFamily="STIX Two Text"
-          fontSize="3.357"
-          fontStyle="italic"
-          letterSpacing="0.214"
-          textAnchor="middle"
-        >
-          <tspan
-            id="tspan5118-6-8-9-0-6-3-7-9-2"
-            style={{}}
-            x="-622.006"
-            y="894.615"
-            fill="#333"
-            stroke="none"
-            strokeDasharray="none"
-            strokeWidth="0"
-            fontFamily="Arial"
-            fontSize="3.357"
-            fontStretch="condensed"
-            fontStyle="normal"
-            fontVariant="normal"
-            fontWeight="normal"
-          >
-            12
-          </tspan>
-        </text>
-        <text
-          xmlSpace="preserve"
-          style={{
-            lineHeight: "1.1",
-
-            textAlign: "center",
-          }}
-          id="text5120-6-0-8-0-8-5-3-2-9-1"
-          x="-513.834"
-          y="1002.787"
-          fill="#333"
-          fillOpacity="0.787"
-          stroke="none"
-          strokeWidth="0"
-          fontFamily="STIX Two Text"
-          fontSize="3.357"
-          fontStyle="italic"
-          letterSpacing="0.214"
-          textAnchor="middle"
-        >
-          <tspan
-            id="tspan5118-6-8-9-0-6-3-7-9-5-3"
-            style={{}}
-            x="-513.727"
-            y="1002.787"
-            fill="#333"
-            stroke="none"
-            strokeDasharray="none"
-            strokeWidth="0"
-            fontFamily="Arial"
-            fontSize="3.357"
-            fontStretch="condensed"
-            fontStyle="normal"
-            fontVariant="normal"
-            fontWeight="normal"
-          >
-            14
-          </tspan>
-        </text>
-        <text
-          xmlSpace="preserve"
-          style={{
-            lineHeight: "1.1",
-
-            textAlign: "center",
-          }}
-          id="text5120-6-0-8-0-8-5-3-2-6-1"
-          x="-452.97"
-          y="963.75"
-          fill="#333"
-          fillOpacity="0.787"
-          stroke="none"
-          strokeWidth="0"
-          fontFamily="STIX Two Text"
-          fontSize="3.357"
-          fontStyle="italic"
-          letterSpacing="0.214"
-          textAnchor="middle"
-        >
-          <tspan
-            id="tspan5118-6-8-9-0-6-3-7-9-2-8"
-            style={{}}
-            x="-452.863"
-            y="963.75"
-            fill="#333"
-            stroke="none"
-            strokeDasharray="none"
-            strokeWidth="0"
-            fontFamily="Arial"
-            fontSize="3.357"
-            fontStretch="condensed"
-            fontStyle="normal"
-            fontVariant="normal"
-            fontWeight="normal"
-          >
-            15
-          </tspan>
-        </text>
-        <text
-          xmlSpace="preserve"
-          style={{
-            lineHeight: "1.1",
-
-            textAlign: "center",
-          }}
-          id="text5120-6-0-8-0-8-5-3-2-9-1-9"
-          x="-510.223"
-          y="895.272"
-          fill="#333"
-          fillOpacity="0.787"
-          stroke="none"
-          strokeWidth="0"
-          fontFamily="STIX Two Text"
-          fontSize="3.357"
-          fontStyle="italic"
-          letterSpacing="0.214"
-          textAnchor="middle"
-        >
-          <tspan
-            id="tspan5118-6-8-9-0-6-3-7-9-5-3-4"
-            style={{}}
-            x="-510.116"
-            y="895.272"
-            fill="#333"
-            stroke="none"
-            strokeDasharray="none"
-            strokeWidth="0"
-            fontFamily="Arial"
-            fontSize="3.357"
-            fontStretch="condensed"
-            fontStyle="normal"
-            fontVariant="normal"
-            fontWeight="normal"
-          >
-            16
-          </tspan>
-        </text>
-        <text
-          xmlSpace="preserve"
-          style={{
-            lineHeight: "1.1",
-
-            textAlign: "center",
-          }}
-          id="text7872-8"
-          x="-520.396"
-          y="703.17"
-          fill="#333"
-          fillOpacity="1"
-          stroke="none"
-          strokeWidth="1"
-          fontFamily="Arial"
-          fontSize="22.578"
-          fontStretch="condensed"
-          fontStyle="normal"
-          fontVariant="normal"
-          fontWeight="normal"
-          textAnchor="middle"
-        >
-          {/* <tspan
-            id="tspan7870-0"
-            x="-720.396"
-            y="703.17"
-            fill={"black"}
-            strokeWidth="1"
-            fontFamily="Arial"
-            fontSize="18.578"
-            fontStretch="normal"
-            fontStyle="normal"
-            fontVariant="normal"
-            fontWeight="normal"
-          >
-            1ος ΟΡΟΦΟΣ {router.query.bookshelf}
-          </tspan>
-          <tspan
-            id="tspan7870-0"
-            x="-720.396"
-            y="723.17"
-            fill={"black"}
-            strokeWidth="1"
-            fontFamily="Arial"
-            fontSize="18.578"
-            fontStretch="normal"
-            fontStyle="normal"
-            fontVariant="normal"
-            fontWeight="normal"
-          >
-            {router.query.title}
-          </tspan> */}
-        </text>
+          id={"15"}
+          width="29.820665"
+          height="44.434605"
+          x="-643.42535"
+          y="922.61206"
+        />
       </g>
     </svg>
   );

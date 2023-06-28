@@ -236,7 +236,7 @@ export default function Demo() {
 
   return (
     <div className="h-screen">
-      <div className="flex z-50 sticky top-0 bg-white gap-4 md:items-center border  p-2 shadow">
+      <div className="flex z-50 sticky top-0 bg-white gap-4 md:items-center border p-2 shadow">
         <div className=" flex gap-2 md:mr-6 lg:mr-14 xl:mr-40 2xl:mr-72">
           <picture>
             <img
@@ -301,7 +301,7 @@ export default function Demo() {
             </li>
           ))}
         </ul>
-        <div className="md:p-4 md:pb-0   h-fit">
+        <div className="md:p-4 md:pb-0 h-fit">
           <div className=" md:hidden  gap-x-3 flex text-sm font-bold w-screen overflow-x-auto  ">
             <Link className="w-full h-full flex  items-center" href={"/"}>
               <span className="py-3 whitespace-nowrap w-fit px-4 my-6 border text-center  rounded-lg  ">
@@ -361,7 +361,7 @@ export default function Demo() {
                       <div className="font-medium xl:sticky xl:mb-8">
                         <span className="underline">{t("location")} </span>
                         <br />
-                        <div className="flex gap-x-2  ">
+                        <div className="flex gap-x-2">
                           {/* <span>όροφος:{obj.floor}</span> */}
                           {/* <span>ράφι:{obj.bookshelf}</span> */}
                         </div>
@@ -397,7 +397,7 @@ export default function Demo() {
         className="modal-toggle"
       />
       <div className="modal ">
-        <div className="modal-box overflow-hidden relative lg:max-w-4xl lg:max-h-full xl:max-w-full ">
+        <div className="modal-box   lg:max-w-4xl xl:max-w-full ">
           <label
             onClick={() => {
               if (!ref.current) return;
@@ -419,8 +419,8 @@ export default function Demo() {
             </span>
           </h3>
 
-          <div className=" grid lg:grid lg:grid-cols-[1fr_2fr] content-center md:h-full gap-2">
-            <ul className="lg:max-w-md uppercase h-full w-fit  lg:border-r text-xs md:text-lg lg:text-sm xl:text-lg">
+          <div className=" grid lg:grid-cols-[15vw_1fr] gap-2 h-full">
+            <ul className="lg:max-w-md uppercase h-full w-fit text-xs md:text-lg lg:text-sm xl:text-lg">
               <li className="font-semibold">{t("characteristics")}</li>
               <li className="grid grid-cols-[1fr_2fr] mt-2 w-full ">
                 <span className="text-md mr-2">{t("author")}:&nbsp; </span>
@@ -459,13 +459,8 @@ export default function Demo() {
               </li>
             </ul>
 
-            <div className="divider lg:hidden"></div>
-            <div className=" md:h-full  lg:h-[50vh] 2xl:h-[70vh] grid place-items-center w-full ">
-              {Number(floor) === 0 ? (
-                <GroundFloor bookshelf={shelf as string} />
-              ) : (
-                <FirstFloor bookshelf={shelf as string} />
-              )}
+            <div className="lg:border-l border-t lg:border-t-0 p-8 flex items-center overflow-hidden lg:h-[75vh]">
+              <FirstFloor bookshelf={shelf as string} />
             </div>
           </div>
         </div>
