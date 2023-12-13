@@ -237,8 +237,11 @@ export default function Demo() {
   }
 
   useEffect(() => {
-    router.replace("/?category=agwgh");
-  }, []);
+    const [f] = categories;
+    if (!f || categories.length === 0) return;
+    console.log(category);
+    // if (!category) router.replace(`/?category=${f?.category}`);
+  }, [categories, category, router]);
 
   return (
     <div className="h-screen">

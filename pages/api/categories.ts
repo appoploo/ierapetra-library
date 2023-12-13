@@ -157,7 +157,7 @@ const categories: {
     src: "/category-images/Παγκόσμια Λογοτεχνία.png",
   },
   {
-    value: "paidika",
+    value: "paidikh-logotexnia-my8ologia",
     category: "Παιδικά",
     categoryEn: "Children's",
     src: "/category-images/Παιδικά.png",
