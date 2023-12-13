@@ -189,7 +189,9 @@ export default function Demo() {
   const getCategorySrc = (category: string) => {
     const firstLetter = category[0].toLocaleLowerCase();
     const idx = mapFirstLetterToCategoryIdx[firstLetter] % categories.length;
-    return categories[idx]?.src;
+    return (
+      categories[idx]?.src ?? "/category-images/Αρχαίοι Έλληνες Συγγραφείς.png"
+    );
   };
 
   const author =
@@ -233,6 +235,10 @@ export default function Demo() {
     const obj = categories.find((c) => c.value === cat);
     return router.locale === "en" ? obj?.categoryEn : obj?.category;
   }
+
+  useEffect(() => {
+    router.replace("/?category=agwgh");
+  }, []);
 
   return (
     <div className="h-screen">
@@ -285,9 +291,6 @@ export default function Demo() {
 
       <div className=" grid  sm:grid-col-1 md:grid-cols-[300px_2fr]">
         <ul className="h-full menu  border-r  mt-0.5  hidden md:block bg-base-100 w-72 justify-items-center  ">
-          <li>
-            <Link href={"/"}>{t("all")}</Link>
-          </li>
           {categories.map((sm, idx) => (
             <li key={idx}>
               <Link
@@ -460,7 +463,11 @@ export default function Demo() {
             </ul>
 
             <div className="lg:border-l border-t lg:border-t-0 p-8 flex items-center overflow-hidden lg:h-[75vh]">
-              <FirstFloor bookshelf={shelf as string} />
+              {floor === "1" ? (
+                <GroundFloor bookshelf={shelf as string} />
+              ) : (
+                <FirstFloor bookshelf={shelf as string} />
+              )}
             </div>
           </div>
         </div>

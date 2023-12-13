@@ -2,513 +2,560 @@ import { useRouter } from "next/router";
 
 export function GroundFloor(props: { bookshelf: string }) {
   const router = useRouter();
+
   return (
     <svg
-      className="block w-full h-full"
-      xmlns="http://www.w3.org/2000/svg"
+      width="500mm"
+      height="250mm"
+      viewBox="0 0 500.00001 250"
       id="svg5"
-      version="1.1"
-      viewBox="0 0 608.295 374.053"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
     >
-      <g id="layer1" transform="translate(1048.47 -164.029)">
+      <defs id="defs2" />
+      <g id="layer1" transform="translate(1027.0437,-685.5076)">
         <path
-          id="rect234-8-2"
-          fill="#f2f2f2"
-          fillOpacity="1"
-          stroke="#000"
-          strokeDasharray="none"
-          strokeOpacity="1"
-          strokeWidth="1"
-          d="M-1047.97 164.529v338.597h222.729v34.456h161.837v-34.456h222.729V164.529z"
-        ></path>
+          id={"47"}
+          style={{
+            fill: props.bookshelf === "47" ? "green" : "#ffe6d5",
+            stroke: "#030303",
+            strokeWidth: "0.3",
+            strokeDasharray: "none",
+            strokeOpacity: "0.962712",
+          }}
+          d="m -995.79725,711.86188 v 13.7451 h 157.37426 v -13.7451 z m 0,13.83437 v 13.74508 h 157.37426 v -13.74508 z"
+        />
+        <text
+          xmlSpace="preserve"
+          style={{
+            fontSize: "12.7122px",
+            lineHeight: 2.1,
+            fontFamily: "'Myriad Pro'",
+
+            textAlign: "center",
+            textAnchor: "middle",
+            fill: "#1a1a1a",
+            stroke: "#030303",
+            strokeWidth: 0.27026,
+            strokeOpacity: 0.962712,
+          }}
+          x={-916.91327}
+          y={722.8656}
+          id="text620"
+        >
+          <tspan
+            id="tspan618"
+            x={-916.91327}
+            y={722.8656}
+            style={{
+              strokeWidth: 0.27026,
+            }}
+          >
+            {"47"}
+          </tspan>
+        </text>
+        <text
+          xmlSpace="preserve"
+          style={{
+            fontSize: "12.7122px",
+            lineHeight: 2.1,
+            fontFamily: "'Myriad Pro'",
+
+            textAlign: "center",
+            textAnchor: "middle",
+            fill: "#1a1a1a",
+            stroke: "#030303",
+            strokeWidth: 0.27026,
+            strokeOpacity: 0.962712,
+          }}
+          x={-916.91327}
+          y={736.69995}
+          id="text620-2"
+        >
+          <tspan
+            id="tspan618-1"
+            x={-916.91327}
+            y={736.69995}
+            style={{
+              strokeWidth: 0.27026,
+            }}
+          >
+            {"47"}
+          </tspan>
+        </text>
         <path
-          id="rect6342"
-          fill="#e3e2db"
-          fillOpacity="1"
-          stroke="#020101"
-          strokeDasharray="none"
-          strokeOpacity="1"
-          strokeWidth="0.875"
-          d="M-663.162 259.854H-440.61300000000006V503.176H-663.162z"
-        ></path>
+          id={"42"}
+          style={{
+            fill: props.bookshelf === "42" ? "green" : "#ffe6d5",
+            stroke: "#030303",
+            strokeWidth: "0.3",
+            strokeDasharray: "none",
+            strokeOpacity: "0.962712",
+          }}
+          d="m -995.79725,864.24028 v 13.74508 h 157.37426 v -13.74508 z m 265.80358,20.29261 v 13.72318 h 196.67643 v -13.72318 z m -290.20823,13.61768 v 27.65735 h 192.88648 v -27.65735 z"
+        />
+        <text
+          xmlSpace="preserve"
+          style={{
+            fontSize: "12.8408px",
+            lineHeight: 2.1,
+            fontFamily: "'Myriad Pro'",
+
+            textAlign: "center",
+            textAnchor: "middle",
+            fill: "#1a1a1a",
+            stroke: "#030303",
+            strokeWidth: 0.272995,
+            strokeOpacity: 0.962712,
+          }}
+          x={-625.01483}
+          y={904.67639}
+          id="text620-28"
+          transform="scale(1.0102305,0.9898731)"
+        >
+          <tspan
+            id="tspan618-2"
+            x={-625.01483}
+            y={904.67639}
+            style={{
+              strokeWidth: 0.272995,
+            }}
+          >
+            {"42"}
+          </tspan>
+        </text>
+        <rect
+          id={"45"}
+          style={{
+            fill: props.bookshelf === "45" ? "green" : "#ffe6d5",
+            stroke: "#030303",
+            strokeWidth: "0.3",
+            strokeDasharray: "none",
+            strokeOpacity: "0.962712",
+          }}
+          width={13.723196}
+          height={196.67599}
+          x={898.34485}
+          y={533.31757}
+          transform="rotate(90)"
+        />
+        <rect
+          id={"44"}
+          style={{
+            fill: props.bookshelf === "44" ? "green" : "#ffe6d5",
+            stroke: "#030303",
+            strokeWidth: "0.3",
+            strokeDasharray: "none",
+            strokeOpacity: "0.962712",
+          }}
+          width={13.723196}
+          height={196.67599}
+          x={912.17303}
+          y={533.31757}
+          transform="rotate(90)"
+        />
+        <text
+          xmlSpace="preserve"
+          style={{
+            fontSize: "12.8408px",
+            lineHeight: 2.1,
+            fontFamily: "'Myriad Pro'",
+
+            textAlign: "center",
+            textAnchor: "middle",
+            fill: "#1a1a1a",
+            stroke: "#030303",
+            strokeWidth: 0.272995,
+            strokeOpacity: 0.962712,
+          }}
+          x={-625.05975}
+          y={918.65088}
+          id="text620-2-2"
+          transform="scale(1.0102305,0.9898731)"
+        >
+          <tspan
+            id="tspan618-1-0"
+            x={-625.05975}
+            y={918.65088}
+            style={{
+              strokeWidth: 0.272995,
+            }}
+          >
+            {"45"}
+          </tspan>
+        </text>
+        <text
+          xmlSpace="preserve"
+          style={{
+            fontSize: "12.8408px",
+            lineHeight: 2.1,
+            fontFamily: "'Myriad Pro'",
+
+            textAlign: "center",
+            textAnchor: "middle",
+            fill: "#1a1a1a",
+            stroke: "#030303",
+            strokeWidth: 0.272995,
+            strokeOpacity: 0.962712,
+          }}
+          x={-625.05975}
+          y={932.61005}
+          id="text620-2-2-0"
+          transform="scale(1.0102305,0.9898731)"
+        >
+          <tspan
+            id="tspan618-1-0-6"
+            x={-625.05975}
+            y={932.61005}
+            style={{
+              strokeWidth: 0.272995,
+            }}
+          >
+            {"44"}
+          </tspan>
+        </text>
         <path
-          id="rect6604"
-          fill="#e3e2db"
-          fillOpacity="1"
-          stroke="none"
-          strokeDasharray="none"
-          strokeOpacity="1"
-          strokeWidth="0.395"
-          d="M-663.599 350.381H-616.965V399.10499999999996H-663.599z"
-        ></path>
-        <path
-          id="19a"
-          fill={props.bookshelf === "19a" ? "green" : "#502d16"}
-          fillOpacity="0.787"
-          stroke="#000"
-          strokeDasharray="none"
-          strokeOpacity="1"
-          strokeWidth="0.426"
-          d="M-605.751 320.056H-599.336V371.07399999999996H-605.751z"
-        ></path>
-        <a id="19b">
+          id={"41"}
+          style={{
+            fill: props.bookshelf === "41" ? "green" : "#ffe6d5",
+            stroke: "#030303",
+            strokeWidth: "0.3",
+            strokeDasharray: "none",
+            strokeOpacity: "0.962712",
+          }}
+          d="m -995.79725,757.46651 v 13.74507 h 157.37426 v -13.74507 z m 0,13.83434 v 13.74509 h 157.37426 v -13.74509 z m 0,32.13788 v 13.7451 h 157.37426 v -13.7451 z m 0,13.83435 v 13.7451 h 157.37426 v -13.7451 z"
+        />
+        <text
+          xmlSpace="preserve"
+          style={{
+            fontSize: "12.7122px",
+            lineHeight: 2.1,
+            fontFamily: "'Myriad Pro'",
+
+            textAlign: "center",
+            textAnchor: "middle",
+            fill: "#1a1a1a",
+            stroke: "#030303",
+            strokeWidth: 0.27026,
+            strokeOpacity: 0.962712,
+          }}
+          x={-915.98529}
+          y={768.47052}
+          id="text620-9"
+        >
+          <tspan
+            id="tspan618-8"
+            x={-915.98529}
+            y={768.47052}
+            style={{
+              strokeWidth: 0.27026,
+            }}
+          >
+            {"41"}
+          </tspan>
+        </text>
+        <text
+          xmlSpace="preserve"
+          style={{
+            fontSize: "12.7122px",
+            lineHeight: 2.1,
+            fontFamily: "'Myriad Pro'",
+
+            textAlign: "center",
+            textAnchor: "middle",
+            fill: "#1a1a1a",
+            stroke: "#030303",
+            strokeWidth: 0.27026,
+            strokeOpacity: 0.962712,
+          }}
+          x={-915.98529}
+          y={782.30487}
+          id="text620-2-0"
+        >
+          <tspan
+            id="tspan618-1-2"
+            x={-915.98529}
+            y={782.30487}
+            style={{
+              strokeWidth: 0.27026,
+            }}
+          >
+            {"41"}
+          </tspan>
+        </text>
+        <text
+          xmlSpace="preserve"
+          style={{
+            fontSize: "12.7122px",
+            lineHeight: 2.1,
+            fontFamily: "'Myriad Pro'",
+
+            textAlign: "center",
+            textAnchor: "middle",
+            fill: "#1a1a1a",
+            stroke: "#030303",
+            strokeWidth: 0.27026,
+            strokeOpacity: 0.962712,
+          }}
+          x={-915.98529}
+          y={814.44281}
+          id="text620-9-2"
+        >
+          <tspan
+            id="tspan618-8-5"
+            x={-915.98529}
+            y={814.44281}
+            style={{
+              strokeWidth: 0.27026,
+            }}
+          >
+            {"41"}
+          </tspan>
+        </text>
+        <text
+          xmlSpace="preserve"
+          style={{
+            fontSize: "12.7122px",
+            lineHeight: 2.1,
+            fontFamily: "'Myriad Pro'",
+
+            textAlign: "center",
+            textAnchor: "middle",
+            fill: "#1a1a1a",
+            stroke: "#030303",
+            strokeWidth: 0.27026,
+            strokeOpacity: 0.962712,
+          }}
+          x={-915.98529}
+          y={828.27716}
+          id="text620-2-0-2"
+        >
+          <tspan
+            id="tspan618-1-2-2"
+            x={-915.98529}
+            y={828.27716}
+            style={{
+              strokeWidth: 0.27026,
+            }}
+          >
+            {"41"}
+          </tspan>
+        </text>
+        <rect
+          id={"46"}
+          style={{
+            fill: props.bookshelf === "46" ? "green" : "#ffe6d5",
+            stroke: "#030303",
+            strokeWidth: "0.3",
+            strokeDasharray: "none",
+            strokeOpacity: "0.962712",
+          }}
+          width={13.745142}
+          height={157.37442}
+          x={850.4057}
+          y={838.4231}
+          transform="rotate(90)"
+        />
+        <text
+          xmlSpace="preserve"
+          style={{
+            fontSize: "12.7122px",
+            lineHeight: 2.1,
+            fontFamily: "'Myriad Pro'",
+
+            textAlign: "center",
+            textAnchor: "middle",
+            fill: "#1a1a1a",
+            stroke: "#030303",
+            strokeWidth: 0.27026,
+            strokeOpacity: 0.962712,
+          }}
+          x={-915.98529}
+          y={861.40967}
+          id="text620-9-6"
+        >
+          <tspan
+            id="tspan618-8-6"
+            x={-915.98529}
+            y={861.40967}
+            style={{
+              strokeWidth: 0.27026,
+            }}
+          >
+            {"46"}
+          </tspan>
+        </text>
+        <text
+          xmlSpace="preserve"
+          style={{
+            fontSize: "12.7122px",
+            lineHeight: 2.1,
+            fontFamily: "'Myriad Pro'",
+
+            textAlign: "center",
+            textAnchor: "middle",
+            fill: "#1a1a1a",
+            stroke: "#030303",
+            strokeWidth: 0.27026,
+            strokeOpacity: 0.962712,
+          }}
+          x={-915.98529}
+          y={875.24402}
+          id="text620-2-0-1"
+        >
+          <tspan
+            id="tspan618-1-2-26"
+            x={-915.98529}
+            y={875.24402}
+            style={{
+              strokeWidth: 0.27026,
+            }}
+          >
+            {"42"}
+          </tspan>
+        </text>
+        <text
+          xmlSpace="preserve"
+          style={{
+            fontSize: "12.7122px",
+            lineHeight: 2.1,
+            fontFamily: "'Myriad Pro'",
+
+            textAlign: "center",
+            textAnchor: "middle",
+            fill: "#1a1a1a",
+            stroke: "#030303",
+            strokeWidth: 0.27026,
+            strokeOpacity: 0.962712,
+          }}
+          x={-923.51703}
+          y={916.18085}
+          id="text620-9-2-1"
+        >
+          <tspan
+            id="tspan618-8-5-6"
+            x={-923.51703}
+            y={916.18085}
+            style={{
+              strokeWidth: 0.27026,
+            }}
+          >
+            {"42"}
+          </tspan>
+        </text>
+        <rect
+          style={{
+            fill: "#666666",
+            stroke: "none",
+            strokeWidth: 0.0773434,
+            strokeOpacity: 0.962712,
+          }}
+          id="rect2144"
+          width={5.0781851}
+          height={239.72305}
+          x={-1026.3362}
+          y={689.16547}
+        />
+        <rect
+          style={{
+            fill: "#666666",
+            stroke: "none",
+            strokeWidth: 0.0778254,
+            strokeOpacity: 0.962712,
+          }}
+          id="rect2144-1"
+          width={5.0780525}
+          height={242.72676}
+          x={-532.82928}
+          y={689.14246}
+        />
+        <rect
+          style={{
+            fill: "#666666",
+            stroke: "none",
+            strokeWidth: 0.0703662,
+            strokeOpacity: 0.962712,
+          }}
+          id="rect2144-9"
+          width={5.056293}
+          height={199.2827}
+          x={926.81647}
+          y={827.05347}
+          transform="rotate(90)"
+        />
+        <rect
+          style={{
+            fill: "#666666",
+            stroke: "none",
+            strokeWidth: 0.0703662,
+            strokeOpacity: 0.962712,
+          }}
+          id="rect2144-9-7"
+          width={5.056293}
+          height={199.2827}
+          x={926.81647}
+          y={530.92792}
+          transform="rotate(90)"
+        />
+        <rect
+          style={{
+            fill: "#666666",
+            stroke: "none",
+            strokeWidth: 0.110841,
+            strokeOpacity: 0.962712,
+          }}
+          id="rect2144-9-9"
+          width={5.056293}
+          height={494.47131}
+          x={689.14807}
+          y={531.86487}
+          transform="rotate(90)"
+        />
+        <g
+          id="g5013"
+          transform="matrix(1.5704298,0,0,1.5704298,455.30485,-544.91971)"
+        >
+          <text
+            xmlSpace="preserve"
+            style={{
+              fontSize: "8.0947px",
+              lineHeight: 2.1,
+              fontFamily: "'Myriad Pro'",
+
+              textAlign: "center",
+              textAnchor: "middle",
+              fill: "#800000",
+              stroke: "#030303",
+              strokeWidth: 0.172093,
+              strokeOpacity: 0.962712,
+            }}
+            x={-785.19067}
+            y={940.19958}
+            id="text660"
+          >
+            <tspan
+              style={{
+                fill: "#800000",
+                strokeWidth: 0.172093,
+              }}
+              x={-785.19067}
+              y={940.19958}
+              id="tspan662"
+            >
+              {"\u0399\u03A3\u039F\u0393\u0395\u0399\u039F"}
+            </tspan>
+          </text>
           <path
-            id="rect3877-1"
-            fill={props.bookshelf === "19b" ? "green" : "#502d16"}
-            fillOpacity="0.787"
-            stroke="#000"
-            strokeDasharray="none"
-            strokeOpacity="1"
-            strokeWidth="0.426"
-            d="M-598.532 320.056H-592.1170000000001V371.07399999999996H-598.532z"
-          ></path>
-        </a>
-        <path
-          id="20a"
-          fill={props.bookshelf === "20a" ? "green" : "#502d16"}
-          fillOpacity="0.787"
-          stroke="#000"
-          strokeDasharray="none"
-          strokeOpacity="1"
-          strokeWidth="0.426"
-          d="M-574.184 320.056H-567.769V371.07399999999996H-574.184z"
-        ></path>
-        <path
-          id="20b"
-          fill={props.bookshelf === "20b" ? "green" : "#502d16"}
-          fillOpacity="0.787"
-          stroke="#000"
-          strokeDasharray="none"
-          strokeOpacity="1"
-          strokeWidth="0.426"
-          d="M-566.964 320.056H-560.5490000000001V371.07399999999996H-566.964z"
-        ></path>
-        <path
-          id="21a"
-          fill={props.bookshelf === "21a" ? "green" : "#502d16"}
-          fillOpacity="0.787"
-          stroke="#000"
-          strokeDasharray="none"
-          strokeOpacity="1"
-          strokeWidth="0.426"
-          d="M-542.576 320.056H-536.1610000000001V371.07399999999996H-542.576z"
-        ></path>
-        <path
-          id="22b"
-          fill={props.bookshelf === "22b" ? "green" : "#502d16"}
-          fillOpacity="0.787"
-          stroke="#000"
-          strokeDasharray="none"
-          strokeOpacity="1"
-          strokeWidth="0.426"
-          d="M-503.789 320.056H-497.37399999999997V371.07399999999996H-503.789z"
-        ></path>
-        <path
-          id="21b"
-          fill={props.bookshelf === "21b" ? "green" : "#502d16"}
-          fillOpacity="0.787"
-          stroke="#000"
-          strokeDasharray="none"
-          strokeOpacity="1"
-          strokeWidth="0.426"
-          d="M-535.356 320.056H-528.941V371.07399999999996H-535.356z"
-        ></path>
-        <path
-          id="22a"
-          fill={props.bookshelf === "22a" ? "green" : "#502d16"}
-          fillOpacity="0.787"
-          stroke="#000"
-          strokeDasharray="none"
-          strokeOpacity="1"
-          strokeWidth="0.426"
-          d="M-511.008 320.056H-504.59299999999996V371.07399999999996H-511.008z"
-        ></path>
-        <text
-          xmlSpace="preserve"
-          style={{
-            lineHeight: "1.1",
-
-            textAlign: "center",
-          }}
-          id="text5120-1"
-          x="-602.643"
-          y="375.455"
-          fill="#333"
-          fillOpacity="0.787"
-          stroke="none"
-          strokeDasharray="none"
-          strokeOpacity="1"
-          strokeWidth="0"
-          fontFamily="STIX Two Text"
-          fontSize="3.357"
-          fontStyle="italic"
-          letterSpacing="0.214"
-          textAnchor="middle"
-        >
-          <tspan
-            id="tspan5118-2"
-            style={{}}
-            x="-602.536"
-            y="375.455"
-            fill="#333"
-            stroke="none"
-            strokeDasharray="none"
-            strokeWidth="0"
-            dx="0"
-            fontFamily="Arial"
-            fontSize="3.357"
-            fontStretch="condensed"
-            fontStyle="normal"
-            fontVariant="normal"
-            fontWeight="normal"
-          >
-            19α
-          </tspan>
-        </text>
-        <text
-          xmlSpace="preserve"
-          style={{
-            lineHeight: "1.1",
-
-            textAlign: "center",
-          }}
-          id="text5120-6-0"
-          x="-595.423"
-          y="375.455"
-          fill="#333"
-          fillOpacity="0.787"
-          stroke="none"
-          strokeDasharray="none"
-          strokeOpacity="1"
-          strokeWidth="0"
-          fontFamily="STIX Two Text"
-          fontSize="3.357"
-          fontStyle="italic"
-          letterSpacing="0.214"
-          textAnchor="middle"
-        >
-          <tspan
-            id="tspan5118-6-8"
-            style={{}}
-            x="-595.316"
-            y="375.455"
-            fill="#333"
-            stroke="none"
-            strokeDasharray="none"
-            strokeWidth="0"
-            dx="0"
-            fontFamily="Arial"
-            fontSize="3.357"
-            fontStretch="condensed"
-            fontStyle="normal"
-            fontVariant="normal"
-            fontWeight="normal"
-          >
-            19β
-          </tspan>
-        </text>
-        <text
-          xmlSpace="preserve"
-          style={{
-            lineHeight: "1.1",
-
-            textAlign: "center",
-          }}
-          id="text5120-3-6"
-          x="-571.075"
-          y="375.455"
-          fill="#333"
-          fillOpacity="0.787"
-          stroke="none"
-          strokeDasharray="none"
-          strokeOpacity="1"
-          strokeWidth="0"
-          fontFamily="STIX Two Text"
-          fontSize="3.357"
-          fontStyle="italic"
-          letterSpacing="0.214"
-          textAnchor="middle"
-        >
-          <tspan
-            id="tspan5118-9-4"
-            style={{}}
-            x="-570.968"
-            y="375.455"
-            fill="#333"
-            stroke="none"
-            strokeDasharray="none"
-            strokeWidth="0"
-            fontFamily="Arial"
-            fontSize="3.357"
-            fontStretch="condensed"
-            fontStyle="normal"
-            fontVariant="normal"
-            fontWeight="normal"
-          >
-            20α
-          </tspan>
-        </text>
-        <text
-          xmlSpace="preserve"
-          style={{
-            lineHeight: "1.1",
-
-            textAlign: "center",
-          }}
-          id="text5120-6-2-8"
-          x="-563.856"
-          y="375.455"
-          fill="#333"
-          fillOpacity="0.787"
-          stroke="none"
-          strokeDasharray="none"
-          strokeOpacity="1"
-          strokeWidth="0"
-          fontFamily="STIX Two Text"
-          fontSize="3.357"
-          fontStyle="italic"
-          letterSpacing="0.214"
-          textAnchor="middle"
-        >
-          <tspan
-            id="tspan5118-6-5-3"
-            style={{}}
-            x="-563.749"
-            y="375.455"
-            fill="#333"
-            stroke="none"
-            strokeDasharray="none"
-            strokeWidth="0"
-            fontFamily="Arial"
-            fontSize="3.357"
-            fontStretch="condensed"
-            fontStyle="normal"
-            fontVariant="normal"
-            fontWeight="normal"
-          >
-            20β
-          </tspan>
-        </text>
-        <text
-          xmlSpace="preserve"
-          style={{
-            lineHeight: "1.1",
-
-            textAlign: "center",
-          }}
-          id="text5120-4-7"
-          x="-539.467"
-          y="375.455"
-          fill="#333"
-          fillOpacity="0.787"
-          stroke="none"
-          strokeDasharray="none"
-          strokeOpacity="1"
-          strokeWidth="0"
-          fontFamily="STIX Two Text"
-          fontSize="3.357"
-          fontStyle="italic"
-          letterSpacing="0.214"
-          textAnchor="middle"
-        >
-          <tspan
-            id="tspan5118-8-4"
-            style={{}}
-            x="-539.36"
-            y="375.455"
-            fill="#333"
-            stroke="none"
-            strokeDasharray="none"
-            strokeWidth="0"
-            fontFamily="Arial"
-            fontSize="3.357"
-            fontStretch="condensed"
-            fontStyle="normal"
-            fontVariant="normal"
-            fontWeight="normal"
-          >
-            21α
-          </tspan>
-        </text>
-        <text
-          xmlSpace="preserve"
-          style={{
-            lineHeight: "1.1",
-
-            textAlign: "center",
-          }}
-          id="text5120-6-8-3"
-          x="-532.248"
-          y="375.455"
-          fill="#333"
-          fillOpacity="0.787"
-          stroke="none"
-          strokeDasharray="none"
-          strokeOpacity="1"
-          strokeWidth="0"
-          fontFamily="STIX Two Text"
-          fontSize="3.357"
-          fontStyle="italic"
-          letterSpacing="0.214"
-          textAnchor="middle"
-        >
-          <tspan
-            id="tspan5118-6-4-5"
-            style={{}}
-            x="-532.141"
-            y="375.455"
-            fill="#333"
-            stroke="none"
-            strokeDasharray="none"
-            strokeWidth="0"
-            fontFamily="Arial"
-            fontSize="3.357"
-            fontStretch="condensed"
-            fontStyle="normal"
-            fontVariant="normal"
-            fontWeight="normal"
-          >
-            21β
-          </tspan>
-        </text>
-        <text
-          xmlSpace="preserve"
-          style={{
-            lineHeight: "1.1",
-
-            textAlign: "center",
-          }}
-          id="text5120-49-9"
-          x="-507.9"
-          y="375.455"
-          fill="#333"
-          fillOpacity="0.787"
-          stroke="none"
-          strokeDasharray="none"
-          strokeOpacity="1"
-          strokeWidth="0"
-          fontFamily="STIX Two Text"
-          fontSize="3.357"
-          fontStyle="italic"
-          letterSpacing="0.214"
-          textAnchor="middle"
-        >
-          <tspan
-            id="tspan5118-0-7"
-            style={{}}
-            x="-507.793"
-            y="375.455"
-            fill="#333"
-            stroke="none"
-            strokeDasharray="none"
-            strokeWidth="0"
-            fontFamily="Arial"
-            fontSize="3.357"
-            fontStretch="condensed"
-            fontStyle="normal"
-            fontVariant="normal"
-            fontWeight="normal"
-          >
-            22α
-          </tspan>
-        </text>
-        <text
-          xmlSpace="preserve"
-          style={{
-            lineHeight: "1.1",
-
-            textAlign: "center",
-          }}
-          id="text5120-6-4-4"
-          x="-500.68"
-          y="375.455"
-          fill="#333"
-          fillOpacity="0.787"
-          stroke="none"
-          strokeDasharray="none"
-          strokeOpacity="1"
-          strokeWidth="0"
-          fontFamily="STIX Two Text"
-          fontSize="3.357"
-          fontStyle="italic"
-          letterSpacing="0.214"
-          textAnchor="middle"
-        >
-          <tspan
-            id="tspan5118-6-9-4"
-            style={{}}
-            x="-500.573"
-            y="375.455"
-            fill="#333"
-            stroke="none"
-            strokeDasharray="none"
-            strokeWidth="0"
-            fontFamily="Arial"
-            fontSize="3.357"
-            fontStretch="condensed"
-            fontStyle="normal"
-            fontVariant="normal"
-            fontWeight="normal"
-          >
-            22β
-          </tspan>
-        </text>
-        <text
-          xmlSpace="preserve"
-          style={{
-            lineHeight: "1.1",
-
-            textAlign: "center",
-          }}
-          id="text7872"
-          x="-493.833"
-          y="192.738"
-          fill="#333"
-          fillOpacity="1"
-          stroke="none"
-          strokeDasharray="none"
-          strokeOpacity="1"
-          strokeWidth="1"
-          fontFamily="Arial"
-          fontSize="22.578"
-          fontStretch="condensed"
-          fontStyle="normal"
-          fontVariant="normal"
-          fontWeight="normal"
-          opacity="1"
-          textAnchor="middle"
-        >
-          {/* <tspan
-            id="tspan7870"
-            x="-720.833"
-            y="210.738"
-            fill="#333"
-            strokeWidth="1"
-            fontFamily="Arial"
-            fontSize="18.578"
-            fontStretch="normal"
-            fontStyle="normal"
-            fontVariant="normal"
-            fontWeight="normal"
-          >
-            ΙΣΟΓΕΙΟ {router.query.bookshelf}
-          </tspan>
-          <tspan
-            id="tspan7870"
-            x="-720.833"
-            y="230.738"
-            fill="#333"
-            strokeWidth="1"
-            fontFamily="Arial"
-            fontSize="18.578"
-            fontStretch="normal"
-            fontStyle="normal"
-            fontVariant="normal"
-            fontWeight="normal"
-          >
-            {router.query.title}
-          </tspan> */}
-        </text>
+            id="path2820"
+            style={{
+              fill: "#800000",
+              stroke: "none",
+              strokeWidth: 0.00833403,
+              strokeOpacity: 0.962712,
+            }}
+            d="m -790.34722,922.15972 4.07699,0.0169 v 7.78281 h 2.47465 v -7.7726 l 4.0772,0.0169 -5.25107,-5.5446 z"
+          />
+        </g>
       </g>
     </svg>
   );
