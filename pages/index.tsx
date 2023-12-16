@@ -302,12 +302,6 @@ export default function Demo() {
         </ul>
         <div className="md:p-4 md:pb-0 h-fit">
           <div className=" md:hidden  gap-x-3 flex text-sm font-bold w-screen overflow-x-auto  ">
-            <Link className="w-full h-full flex  items-center" href={"/"}>
-              <span className="py-3 whitespace-nowrap w-fit px-4 my-6 border text-center  rounded-lg  ">
-                {t("all")}
-              </span>
-            </Link>
-
             {categories.map((t, idx) => (
               <Link
                 key={idx}
