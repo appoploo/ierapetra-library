@@ -1,5 +1,4 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { couldStartTrivia } from "typescript";
 
 const categories: {
   value: string;
@@ -159,8 +158,8 @@ const categories: {
   },
   {
     value: "paidikh-logotexnia-my8ologia",
-    category: "Παιδικά",
-    categoryEn: "Children's",
+    category: "Παιδική Λογοτεχνία - Μυθολογία",
+    categoryEn: "Children's Literature - Mythology",
     src: "/category-images/Παιδικά.png",
   },
   {
