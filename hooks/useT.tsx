@@ -12,10 +12,14 @@ type Key =
   | "title"
   | "all"
   | "shelf"
-  | "nameofapp";
+  | "nameofapp"
+  | "Loading"
+  | "noresults";
 
 const translations: Record<Locale, Record<Key, string>> = {
   en: {
+    Loading: "Loading",
+    noresults: "No results",
     all: "All",
     characteristics: "Characteristics",
     author: "Author",
@@ -30,6 +34,8 @@ const translations: Record<Locale, Record<Key, string>> = {
   },
   el: {
     all: "Όλες",
+    Loading: "Φόρτωση",
+    noresults: "Δεν βρέθηκαν αποτελέσματα",
     characteristics: "Χαρακτηριστικα",
     author: "Συγγραφεας",
     publisher: "Εκδοσεις",

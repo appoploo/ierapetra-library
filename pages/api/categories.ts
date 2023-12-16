@@ -1,4 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import { couldStartTrivia } from "typescript";
 
 const categories: {
   value: string;
@@ -204,8 +205,72 @@ const categories: {
     categoryEn: "Psychology",
     src: "/category-images/Ψυχολογία.png",
   },
+
+  {
+    value: "panepisthmiakes-ekdoseis",
+    category: "Πανεπιστημιακές εκδόσεις",
+    categoryEn: "University Publications",
+    src: "/category-images/Πανεπιστημιακές εκδόσεις.png",
+  },
+  {
+    value: "mageirikh",
+    category: "Μαγειρική",
+    categoryEn: "Cooking",
+    src: "/category-images/Μαγειρική.png",
+  },
+  {
+    value: "dwrea-filo8eoy-boyzoynerakh",
+    category: "Δωρεά Φιλόθεου Βουζουνεράκη",
+    categoryEn: "Donation of Filotheou Bouzounerakis",
+    src: "/category-images/Δωρεά Φιλόθεου Βουζουνεράκη.png",
+  },
+  {
+    value: "diafora",
+    category: "Διάφορα",
+    categoryEn: "Miscellaneous",
+    src: "/category-images/Διάφορα.png",
+  },
+  {
+    value: "dwrea-man-papadakh",
+    category: "Δωρεά Μαν Παπαδάκη",
+    categoryEn: "Donation of Man Papadakis",
+    src: "/category-images/Δωρεά Μαν Παπαδάκη.png",
+  },
+  {
+    value: "dwrea-zwh",
+    category: "Δωρεά Ζώη",
+    categoryEn: "Donation of Zoe",
+    src: "/category-images/Δωρεά Ζώη.png",
+  },
+  {
+    value: "paidikes-egkyklopedies",
+    category: "Παιδικές Εγκυκλοπαίδιες",
+    categoryEn: "Children's Encyclopedias",
+    src: "/category-images/Παιδικές Εγκυκλοπαίδιες.png",
+  },
+  {
+    value: "x.k.",
+    category: "Χ.Κ.",
+    categoryEn: "X.K.",
+    src: "/category-images/Χ.Κ..png",
+  },
+  {
+    value: "astynomika",
+    category: "Αστυνομικά",
+    categoryEn: "Detective",
+    src: "/category-images/Αστυνομικά.png",
+  },
+  {
+    value: "palies-spanies-ekdoseis",
+    category: "Παλιές Σπάνιες Εκδόσεις",
+    categoryEn: "Old Rare Editions",
+    src: "/category-images/Παλιές Σπάνιες Εκδόσεις.png",
+  },
 ];
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  res.status(200).json(categories);
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  res.json(categories);
 }

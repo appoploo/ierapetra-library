@@ -177,12 +177,12 @@ const useCategories = () => {
 
 export default function Demo() {
   const router = useRouter();
-  const category = router.query.category as string;
+  const category = (router.query.category as string) ?? "agwgh";
   const searchTerm = router.query.searchTerm as string;
   const ref = useRef<HTMLInputElement>(null);
   const [total, setTotal] = useState(0);
 
-  const { data: books } = useBooks(searchTerm, category);
+  const { data: books, isLoading } = useBooks(searchTerm, category);
   const { data: book } = useBook();
   const { data: categories } = useCategories();
 
@@ -235,13 +235,6 @@ export default function Demo() {
     const obj = categories.find((c) => c.value === cat);
     return router.locale === "en" ? obj?.categoryEn : obj?.category;
   }
-
-  useEffect(() => {
-    const [f] = categories;
-    if (!f || categories.length === 0) return;
-    console.log(category);
-    // if (!category) router.replace(`/?category=${f?.category}`);
-  }, [categories, category, router]);
 
   return (
     <div className="h-screen">
@@ -334,7 +327,29 @@ export default function Demo() {
               </Link>
             ))}
           </div>
-          <div className="flex flex-col h-full">
+          <div className="flex flex-col h-full ">
+            {books?.content?.length === 0 && (
+              <div className="w shadow w-full bg-base-100 border h-full grid place-items-center">
+                <div className="card-body h-40">
+                  <h2 className="card-title  h-full grid place-items-center xl:text-sm 2xl:text-lg">
+                    {t("noresults")}
+                  </h2>
+                </div>
+              </div>
+            )}
+            {isLoading && (
+              <div className="w shadow w-full bg-base-100 border h-full grid place-items-center">
+                <div className="card-body h-40 flex">
+                  <div className="relative">
+                    <div className="h-12 w-12 rounded-full border-t-8 border-b-8 border-gray-200"></div>
+                    <div className="absolute top-0 left-0 h-12 w-12 rounded-full border-t-8 border-b-8 border-blue-500 animate-spin"></div>
+                  </div>
+                  <h2 className="  h-full grid place-items-center xl:text-sm 2xl:text-lg">
+                    {t("Loading")}
+                  </h2>
+                </div>
+              </div>
+            )}
             <div className="grid grid-col-1 h-full  lg:grid-cols-2 xl:grid-cols-4 gap-4 ">
               {books?.content?.map((obj, idx) => (
                 <Link
@@ -377,20 +392,24 @@ export default function Demo() {
                 </Link>
               ))}
             </div>
-            <div className="mt-4 w-full flex">
-              <Pagination
-                currentPage={router.query.page ? Number(router.query.page) : 1}
-                onPageChange={(page) => {
-                  router.push({
-                    query: {
-                      ...router.query,
-                      page: page,
-                    },
-                  });
-                }}
-                totalPages={total}
-              />
-            </div>
+            {books?.content?.length > 1 && (
+              <div className="mt-4 w-full flex">
+                <Pagination
+                  currentPage={
+                    router.query.page ? Number(router.query.page) : 1
+                  }
+                  onPageChange={(page) => {
+                    router.push({
+                      query: {
+                        ...router.query,
+                        page: page,
+                      },
+                    });
+                  }}
+                  totalPages={total}
+                />
+              </div>
+            )}
           </div>
         </div>
       </div>
