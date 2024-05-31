@@ -82,7 +82,7 @@ export default async function handler(
         propertyUuid: "9d6a626f-b57d-43ae-b00c-77cd7a962384",
         propertyValue: category,
         logicalOperator: "AND",
-        operator: "CONTAINS",
+        operator: "EQUALS",
       },
     ],
   });
