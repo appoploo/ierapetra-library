@@ -42,7 +42,7 @@ export type Res = {
       propertyUuid: string;
       value: string;
       attributes: any[];
-    }
+    },
   ];
   totalElements: number;
   last: boolean;
@@ -70,7 +70,7 @@ export interface Sort {
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse,
 ) {
   const { category = "", title, page = 1, searchTerm } = req.query;
 
@@ -87,7 +87,7 @@ export default async function handler(
     ],
   });
   let offset = Number(page === "undefined" ? 0 : page);
-  const url = `https://storev2-api.repox.io/public/containers/search?page=${offset}&sort=label,asc`;
+  const url = `https://repox.dimos-ierapetras.gr/api/public/containers/search?page=${offset}&sort=label,asc`;
 
   await fetch(url, {
     method: "POST",

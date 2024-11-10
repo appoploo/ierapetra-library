@@ -60,11 +60,11 @@ export interface WatchDetails {
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse,
 ) {
   const { id = "" } = req.query;
 
-  const url = `https://repox.dimos-ierapetras.gr/ierapetra/public/containers/${id}`;
+  const url = `https://repox.dimos-ierapetras.gr/api/public/containers/${id}`;
 
   await fetch(url, {
     headers: {
