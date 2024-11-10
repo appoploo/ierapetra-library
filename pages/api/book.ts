@@ -64,7 +64,7 @@ export default async function handler(
 ) {
   const { id = "" } = req.query;
 
-  const url = `https://storev2-api.repox.io/public/containers/${id}`;
+  const url = `https://repox.dimos-ierapetras.gr/ierapetra/public/containers/${id}`;
 
   await fetch(url, {
     headers: {
